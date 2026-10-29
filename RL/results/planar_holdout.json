@@ -1,0 +1,247 @@
+{
+  "checkpoint": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\planar_20261029_110853\\policy_round_2.pt",
+  "sha256": "736e993c47e1ba19e874ba47c88f16994812bee4a760b26b0257888e31d6c5bd",
+  "seed": 20261029,
+  "config": {
+    "scene": "flat_no_obstacles",
+    "observation_horizon": 3.0,
+    "position_tolerance": 0.03,
+    "speed_tolerance": 0.03,
+    "yaw_rate_tolerance": 0.1,
+    "settle_seconds": 2.0,
+    "policy_activation": "silu",
+    "observation_dim": 24,
+    "observation_order": [
+      "pitch",
+      "roll",
+      "gyro_x",
+      "gyro_y",
+      "gyro_z",
+      "torso_height",
+      "linear_velocity_x",
+      "linear_velocity_y",
+      "linear_velocity_z",
+      "right1_position",
+      "right2_position",
+      "left1_position",
+      "left2_position",
+      "right1_velocity",
+      "right2_velocity",
+      "left1_velocity",
+      "left2_velocity",
+      "rightwheel_velocity",
+      "leftwheel_velocity",
+      "remaining_time_fraction",
+      "target_forward_error",
+      "target_left_error",
+      "command_velocity",
+      "command_turn_rate"
+    ],
+    "observation_scales": [
+      3.141592653589793,
+      3.141592653589793,
+      10.0,
+      10.0,
+      10.0,
+      0.25,
+      1.0,
+      1.0,
+      1.0,
+      3.141592653589793,
+      3.141592653589793,
+      3.141592653589793,
+      3.141592653589793,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      1.0,
+      0.5,
+      0.5,
+      0.15,
+      0.6
+    ],
+    "outer_controller": {
+      "kp": 1.0,
+      "ki": 0.6,
+      "integral_limit": 0.2,
+      "velocity_limit": 0.15,
+      "turn_kp": 1.5,
+      "turn_limit": 0.6,
+      "hold_entry": 0.025,
+      "hold_exit": 0.15
+    }
+  },
+  "results": [
+    {
+      "target": [
+        -0.3310953371672254,
+        0.08359958753452192
+      ],
+      "initial_yaw": 3.00303934229726,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        -0.3360428277661549,
+        0.07403600027427581
+      ],
+      "final_distance": 0.01076753753236261,
+      "final_speed": 6.180802341205604e-05,
+      "last2_max_distance": 0.010767645842910815,
+      "last2_max_speed": 0.002287927888673682,
+      "last2_max_yaw_rate": 0.000147434149799437,
+      "max_pitch": 0.0701156263057944,
+      "min_height": 0.17100336511296943
+    },
+    {
+      "target": [
+        -0.17782487679726747,
+        0.5075895967697843
+      ],
+      "initial_yaw": -0.03714260467785824,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        -0.1646241949320906,
+        0.5277061674768866
+      ],
+      "final_distance": 0.024061056059937483,
+      "final_speed": 0.002478988509814055,
+      "last2_max_distance": 0.024141724850448514,
+      "last2_max_speed": 0.003621090040281923,
+      "last2_max_yaw_rate": 0.00013655114315049274,
+      "max_pitch": 0.06783091096109964,
+      "min_height": 0.17104795891891653
+    },
+    {
+      "target": [
+        -0.034200238647607864,
+        0.23255448232429984
+      ],
+      "initial_yaw": -0.9867658039417471,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        -0.02016650888849547,
+        0.23934511022709742
+      ],
+      "final_distance": 0.015590323866618353,
+      "final_speed": 0.002401879489361016,
+      "last2_max_distance": 0.015715490790257462,
+      "last2_max_speed": 0.0024425413029745937,
+      "last2_max_yaw_rate": 0.0001696564420935849,
+      "max_pitch": 0.0716177605062699,
+      "min_height": 0.1711386044318526
+    },
+    {
+      "target": [
+        0.3319516791010715,
+        0.09400023297468756
+      ],
+      "initial_yaw": -3.0785905526499002,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        0.3337046958321822,
+        0.10890510430636154
+      ],
+      "final_distance": 0.015007606640411088,
+      "final_speed": 0.0013746913275701044,
+      "last2_max_distance": 0.015045031718304668,
+      "last2_max_speed": 0.0028464957150740504,
+      "last2_max_yaw_rate": 0.00017551870127560253,
+      "max_pitch": 0.07929871329523412,
+      "min_height": 0.17113549422968333
+    },
+    {
+      "target": [
+        0.5039389491985125,
+        0.08819066964341234
+      ],
+      "initial_yaw": 3.031661401387642,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        0.5242761765910428,
+        0.09688009371397313
+      ],
+      "final_distance": 0.02211580676108213,
+      "final_speed": 0.004669272403871908,
+      "last2_max_distance": 0.022458321707941188,
+      "last2_max_speed": 0.0076578474803235515,
+      "last2_max_yaw_rate": 0.000208717979632593,
+      "max_pitch": 0.06382071803702132,
+      "min_height": 0.17105635829615257
+    },
+    {
+      "target": [
+        -0.36784789604342766,
+        -0.19713660089582147
+      ],
+      "initial_yaw": 0.6640151497045119,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        -0.38805544613529214,
+        -0.20608167852209225
+      ],
+      "final_distance": 0.022098857311074305,
+      "final_speed": 0.00046222105311517824,
+      "last2_max_distance": 0.02211639519508484,
+      "last2_max_speed": 0.007945340209958641,
+      "last2_max_yaw_rate": 0.00018985013085556708,
+      "max_pitch": 0.07382433913905816,
+      "min_height": 0.17095367371249276
+    },
+    {
+      "target": [
+        -0.14837161598065876,
+        -0.22718340422096786
+      ],
+      "initial_yaw": -0.16053021299711911,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        -0.14193589443078294,
+        -0.24398717269210135
+      ],
+      "final_distance": 0.017994030863011098,
+      "final_speed": 0.0019613608283680396,
+      "last2_max_distance": 0.018057318687715707,
+      "last2_max_speed": 0.0028797703272763014,
+      "last2_max_yaw_rate": 0.00013572887801804962,
+      "max_pitch": 0.062037459137980935,
+      "min_height": 0.17112033322044698
+    },
+    {
+      "target": [
+        0.028401563806640204,
+        0.40201056452090306
+      ],
+      "initial_yaw": -0.05968404627853374,
+      "duration": 40.00000000000292,
+      "standing": true,
+      "settled": true,
+      "final_xy": [
+        0.021964465105761506,
+        0.42275545056474906
+      ],
+      "final_distance": 0.02172064770344132,
+      "final_speed": 0.004394019776337977,
+      "last2_max_distance": 0.02204111446686563,
+      "last2_max_speed": 0.005421323137134908,
+      "last2_max_yaw_rate": 0.00019962300078867933,
+      "max_pitch": 0.08300864046481703,
+      "min_height": 0.17108143131372303
+    }
+  ]
+}
