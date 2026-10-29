@@ -6,12 +6,20 @@ import sys
 # 策略网络（Actor）：看观测 obs，输出 6 个电机动作的"均值"
 # 继承 nn.Module：自动管理参数；policy(obs) 会经 __call__ 自动调用 forward
 class PolicyNetwork(nn.Module):
-    def __init__(self, observation_dim=4):
+    def __init__(self, observation_dim=4, activation="silu"):
         super().__init__()   # 先初始化 nn.Module 内部结构（不是训练）
+
+        # 激活函数本身没有可训练参数；线性层形状保持不变。
+        if activation == "silu":
+            activation_layer = nn.SiLU()
+        elif activation == "relu":
+            activation_layer = nn.ReLU()
+        else:
+            raise ValueError("activation 必须为 silu 或 relu")
 
         self.network = nn.Sequential(
             nn.Linear(observation_dim, 32),    # observation_dim 个观测 → 32 个隐藏值
-            nn.SiLU(),
+            activation_layer,
             nn.Linear(32, 6)     # → 6 个均值，对应 6 个电机
         )
 

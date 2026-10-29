@@ -1,0 +1,106 @@
+{
+  "baseline": {
+    "standing": 6,
+    "successes": 2,
+    "cases": 8
+  },
+  "source_sha256": "0fce20d45c858af648f397df5d96955dac9ff86dbb2fc568264b01ef44f749e4",
+  "experiments": [
+    {
+      "experiment": "temporal_ppo_10.0_20261029_182306",
+      "completed": true,
+      "accepted": false,
+      "standing": 5,
+      "successes": 2,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\temporal_ppo_10.0_20261029_182306\\report.json"
+    },
+    {
+      "experiment": "temporal_ppo_2.0_20261029_182330",
+      "completed": true,
+      "accepted": false,
+      "standing": 5,
+      "successes": 2,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\temporal_ppo_2.0_20261029_182330\\report.json"
+    },
+    {
+      "experiment": "mc_ppo_10.0_20261029_183719",
+      "completed": true,
+      "accepted": false,
+      "standing": 5,
+      "successes": 1,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\mc_ppo_10.0_20261029_183719\\report.json"
+    },
+    {
+      "experiment": "mc_explore_10.0_20261029_184539",
+      "completed": true,
+      "accepted": false,
+      "standing": 6,
+      "successes": 1,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\mc_explore_10.0_20261029_184539\\report.json"
+    },
+    {
+      "experiment": "parameter_search_20261029_183254",
+      "completed": true,
+      "accepted": false,
+      "standing": 6,
+      "successes": 2,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\parameter_search_20261029_183254\\report.json"
+    },
+    {
+      "experiment": "residual_ppo_20261029_184847",
+      "completed": true,
+      "accepted": false,
+      "standing": 5,
+      "successes": 2,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\residual_ppo_20261029_184847\\report.json"
+    },
+    {
+      "experiment": "capacity_imitation_20261029_185530",
+      "completed": true,
+      "accepted": false,
+      "standing": null,
+      "successes": null,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\capacity_imitation_20261029_185530\\report.json"
+    },
+    {
+      "experiment": "wide_dagger_20261029_185926",
+      "completed": true,
+      "accepted": false,
+      "standing": null,
+      "successes": null,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\wide_dagger_20261029_185926\\report.json"
+    },
+    {
+      "experiment": "no_history_imitation_20261029_190229",
+      "completed": true,
+      "accepted": false,
+      "standing": null,
+      "successes": null,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\no_history_imitation_20261029_190229\\report.json"
+    },
+    {
+      "experiment": "expanded_imitation_20261029_190543",
+      "completed": true,
+      "accepted": false,
+      "standing": 6,
+      "successes": 1,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\expanded_imitation_20261029_190543\\report.json"
+    },
+    {
+      "experiment": "expanded_verification_20261029_191053",
+      "completed": true,
+      "accepted": false,
+      "standing": 6,
+      "successes": 1,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\expanded_verification_20261029_191053\\report.json"
+    },
+    {
+      "experiment": "sensitivity_search_20261029_191346",
+      "completed": true,
+      "accepted": false,
+      "standing": 6,
+      "successes": 2,
+      "report": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\experiments\\sensitivity_search_20261029_191346\\report.json"
+    }
+  ]
+}

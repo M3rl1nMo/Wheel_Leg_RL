@@ -27,12 +27,14 @@ class PlanarPositionController:
         self.integral = 0.
         self.heading = initial_yaw
         self.holding = False
+        self.previous_velocity = 0.
 
     def update(self, xy, yaw, target, dt):
         dx,dy = np.asarray(target)-np.asarray(xy)
         forward=math.cos(yaw)*dx+math.sin(yaw)*dy
         left=-math.sin(yaw)*dx+math.cos(yaw)*dy
         distance=math.hypot(dx,dy)
+        entering_hold = not self.holding and distance < .025
         # 近目标冻结目标朝向，避免距离很小时目标方向剧烈改变。
         if self.holding and distance>.15:
             self.holding=False
@@ -43,10 +45,15 @@ class PlanarPositionController:
             self.heading=math.atan2(dy,dx)
         angle=wrap_angle(self.heading-yaw)
         alignment=max(0.,math.cos(angle))
-        if abs(angle)<.6 or self.holding:
+        if entering_hold:
+            # 切换时按上一物理步实际下发的速度指令重算积分。
+            # 保留 PI 补偿能力，同时避免取消朝向衰减后速度指令突然增大。
+            self.integral=float(np.clip((self.previous_velocity-forward)/.6,-.2,.2))
+        elif abs(angle)<.6 or self.holding:
             self.integral=float(np.clip(self.integral+forward*dt,-.2,.2))
         velocity=float(np.clip(forward+.6*self.integral,-.15,.15))
         if not self.holding:
             velocity=max(0.,velocity)*alignment
         turn=float(np.clip(1.5*angle,-.6,.6))
+        self.previous_velocity=velocity
         return forward,left,velocity,turn

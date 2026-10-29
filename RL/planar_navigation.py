@@ -24,6 +24,22 @@ CONFIG = dict(scene='flat_no_obstacles',observation_horizon=3.,position_toleranc
               observation_dim=24,observation_order=ORDER,observation_scales=SCALES,
               outer_controller=dict(kp=1.,ki=.6,integral_limit=.2,velocity_limit=.15,
               turn_kp=1.5,turn_limit=.6,hold_entry=.025,hold_exit=.15))
+LEGACY_CONFIG = CONFIG
+CONFIG = dict(LEGACY_CONFIG, outer_controller=dict(
+    LEGACY_CONFIG['outer_controller'], hold_transition='match_previous_velocity'))
+
+
+def validate_policy_config(config):
+    """旧权重可沿用相同观测，但明确告知外环实现已升级。"""
+    activation=config.get('policy_activation')
+    if activation not in ('silu','relu'):
+        raise ValueError('Unsupported policy activation')
+    if config==dict(CONFIG,policy_activation=activation):
+        return
+    if config==dict(LEGACY_CONFIG,policy_activation=activation):
+        print('INFO: loading legacy policy weights with updated hold-transition controller.',flush=True)
+        return
+    raise ValueError('Checkpoint configuration mismatch')
 
 
 def make_model():
@@ -144,9 +160,12 @@ if __name__=='__main__':
         if args.evaluate:
             if args.checkpoint is None:parser.error('--checkpoint required')
             saved=torch.load(args.checkpoint,map_location='cpu',weights_only=True)
-            if saved['config']!=CONFIG:raise ValueError('Checkpoint configuration mismatch')
-            policy=PolicyNetwork(24);policy.load_state_dict(saved['policy_state_dict']);policy.eval()
+            activation=saved['config'].get('policy_activation')
+            validate_policy_config(saved['config'])
+            policy=PolicyNetwork(24,activation=activation)
+            policy.load_state_dict(saved['policy_state_dict']);policy.eval()
         result=rollout(model,policy,(args.target_x,args.target_y),args.initial_yaw,args.seconds,args.viewer,False)[2]
+        result['outer_controller']=CONFIG['outer_controller']
         print(json.dumps(result),flush=True)
         raise SystemExit
     policy,source=initialize_policy()

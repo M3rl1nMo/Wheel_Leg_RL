@@ -1,0 +1,4338 @@
+{
+  "source": "D:\\ds&codex&agr\\Wheel_Leg\\RL\\results\\planar_policy.pt",
+  "source_sha256": "736e993c47e1ba19e874ba47c88f16994812bee4a760b26b0257888e31d6c5bd",
+  "hyper": {
+    "gamma": 0.9998000199986667,
+    "gae_lambda": 0.9960079893439915,
+    "std": 0.02,
+    "actor_lr": 1e-05,
+    "critic_lr": 0.0003,
+    "clip": 0.1,
+    "epochs": 4,
+    "batch_size": 512,
+    "reference_kl_weight": 0.01,
+    "seed": 52,
+    "dt": 0.002,
+    "steps": 8192,
+    "iterations": 20,
+    "reward": {
+      "progress": 2.0,
+      "time": 0.2,
+      "posture": 0.5,
+      "torque_rate": 2e-05,
+      "success": 5.0,
+      "fall": 10.0
+    },
+    "max_seconds": 40.0,
+    "selection": "arrival"
+  },
+  "updates": [
+    {
+      "iteration": 1,
+      "training_steps": 8192,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 2.1827872842550278e-11,
+            "actor_loss": 0.11813406646251678,
+            "critic_loss": 0.11715251952409744
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0019260020926594734,
+            "actor_loss": 0.05268842726945877,
+            "critic_loss": 0.11387030780315399
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0013345839688554406,
+            "actor_loss": 0.03184545040130615,
+            "critic_loss": 0.09279844909906387
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.001859457464888692,
+            "actor_loss": 0.008847531862556934,
+            "critic_loss": 0.10150490701198578
+          }
+        ],
+        "final_kl": 0.0015247226692736149
+      },
+      "episodes": [
+        {
+          "duration": 12.978000000001003,
+          "failed": false,
+          "arrival_time": 12.978000000001003,
+          "final_distance": 0.006754361749629517,
+          "final_speed": 0.026607709194410186,
+          "settled": true,
+          "return_sum": 2.905654938065057,
+          "posture_rms": 0.008614747416587484,
+          "normalized_torque_change_sum": 8.475476461344874,
+          "normalized_torque_rate_rms": 18.07020911022087,
+          "reward_parts": {
+            "progress": 0.5864912765007414,
+            "time": -2.5955999999997794,
+            "posture": -0.0004815738222318743,
+            "torque_rate": -0.0847547646134487,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5404698552305867,
+        "mean_posture_rms": 0.005212924492063434,
+        "mean_torque_rate_rms": 4.669243417781111,
+        "mean_arrival_time": 17.33800000000024,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.528000000000853,
+            "final_distance": 0.0008456610103887389,
+            "final_speed": 0.0019852702581119783,
+            "settled": true,
+            "return_sum": -2.5198875983128954,
+            "posture_rms": 0.005323028066608965,
+            "normalized_torque_change_sum": 1.7629583736152967,
+            "normalized_torque_rate_rms": 4.694356150761197,
+            "reward_parts": {
+              "progress": 0.4983086779792221,
+              "time": -7.999999999999185,
+              "posture": -0.0005666925559581769,
+              "torque_rate": -0.017629583736152872,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.62800000000111,
+            "final_distance": 0.018618519696765493,
+            "final_speed": 0.0018663126233841257,
+            "settled": true,
+            "return_sum": -2.5525288191195354,
+            "posture_rms": 0.004902294331314546,
+            "normalized_torque_change_sum": 1.481112993178561,
+            "normalized_torque_rate_rms": 4.302779614938552,
+            "reward_parts": {
+              "progress": 0.4627629606064664,
+              "time": -7.999999999999185,
+              "posture": -0.0004806497942168096,
+              "torque_rate": -0.014811129931785903,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.109999999998625,
+            "final_distance": 0.022167222269817988,
+            "final_speed": 0.00033830407487599976,
+            "settled": true,
+            "return_sum": -2.562185150645041,
+            "posture_rms": 0.005385848309793147,
+            "normalized_torque_change_sum": 1.727055886507641,
+            "normalized_torque_rate_rms": 4.646310211484403,
+            "reward_parts": {
+              "progress": 0.45566555546036336,
+              "time": -7.999999999999185,
+              "posture": -0.0005801472403220763,
+              "torque_rate": -0.01727055886507683,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.660000000001231,
+            "final_distance": 0.016574324983101227,
+            "final_speed": 0.001692957745887834,
+            "settled": true,
+            "return_sum": -2.542220245578494,
+            "posture_rms": 0.005479124693444555,
+            "normalized_torque_change_sum": 1.7588061918469087,
+            "normalized_torque_rate_rms": 4.688824735270529,
+            "reward_parts": {
+              "progress": 0.47596823248810816,
+              "time": -7.999999999999185,
+              "posture": -0.0006004161481263216,
+              "torque_rate": -0.01758806191846895,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.76399999999937,
+            "final_distance": 0.021718669001921976,
+            "final_speed": 0.0026171981823461935,
+            "settled": true,
+            "return_sum": -2.525527462496968,
+            "posture_rms": 0.0049743270591559524,
+            "normalized_torque_change_sum": 2.011172661274118,
+            "normalized_torque_rate_rms": 5.013946376450876,
+            "reward_parts": {
+              "progress": 0.49507914270960857,
+              "time": -7.999999999999185,
+              "posture": -0.0004948785938290582,
+              "torque_rate": -0.02011172661274114,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 2,
+      "training_steps": 16384,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.003617239184677601,
+            "critic_loss": 0.061885274946689606
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0012879087589681149,
+            "actor_loss": 0.027918487787246704,
+            "critic_loss": 0.06511690467596054
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.001502761384472251,
+            "actor_loss": -0.024082103744149208,
+            "critic_loss": 0.06290693581104279
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0018862547585740685,
+            "actor_loss": 0.10079850256443024,
+            "critic_loss": 0.04505608230829239
+          }
+        ],
+        "final_kl": 0.0015743906842544675
+      },
+      "episodes": [
+        {
+          "duration": 18.50800000000062,
+          "failed": false,
+          "arrival_time": 18.50800000000062,
+          "final_distance": 0.021988828429345943,
+          "final_speed": 0.008824784106094918,
+          "settled": true,
+          "return_sum": 1.7393840313610407,
+          "posture_rms": 0.006673890321164734,
+          "normalized_torque_change_sum": 11.462613110584844,
+          "normalized_torque_rate_rms": 17.597341973328614,
+          "reward_parts": {
+            "progress": 0.5560223431413095,
+            "time": -3.7015999999996576,
+            "posture": -0.00041218067442325043,
+            "torque_rate": -0.11462613110584935,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5409398558623773,
+        "mean_posture_rms": 0.005246982981344768,
+        "mean_torque_rate_rms": 4.671805945837646,
+        "mean_arrival_time": 17.25960000000022,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.51600000000085,
+            "final_distance": 0.0007577337024887024,
+            "final_speed": 0.002022849119075459,
+            "settled": true,
+            "return_sum": -2.5196435428977537,
+            "posture_rms": 0.0053344121935131935,
+            "normalized_torque_change_sum": 1.755895642375144,
+            "normalized_torque_rate_rms": 4.684943492688836,
+            "reward_parts": {
+              "progress": 0.4984845325950211,
+              "time": -7.999999999999185,
+              "posture": -0.0005691190690060864,
+              "torque_rate": -0.017558956423751472,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.636000000001104,
+            "final_distance": 0.018679633268144973,
+            "final_speed": 0.0018715275587192822,
+            "settled": true,
+            "return_sum": -2.552589181378102,
+            "posture_rms": 0.004924846843525713,
+            "normalized_torque_change_sum": 1.4744832513180615,
+            "normalized_torque_rate_rms": 4.293138786654121,
+            "reward_parts": {
+              "progress": 0.4626407334637148,
+              "time": -7.999999999999185,
+              "posture": -0.00048508232864373887,
+              "torque_rate": -0.014744832513180582,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.11999999999862,
+            "final_distance": 0.022221519963298703,
+            "final_speed": 0.00031978948568946614,
+            "settled": true,
+            "return_sum": -2.5623384898068626,
+            "posture_rms": 0.005413949199484707,
+            "normalized_torque_change_sum": 1.7309232961561904,
+            "normalized_torque_rate_rms": 4.651509561631661,
+            "reward_parts": {
+              "progress": 0.45555696007340346,
+              "time": -7.999999999999185,
+              "posture": -0.0005862169186920648,
+              "torque_rate": -0.01730923296156177,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.318000000001117,
+            "final_distance": 0.017640230640917097,
+            "final_speed": 0.0021421233528674238,
+            "settled": true,
+            "return_sum": -2.544495285328727,
+            "posture_rms": 0.005537222528473223,
+            "normalized_torque_change_sum": 1.771848983460329,
+            "normalized_torque_rate_rms": 4.70617809833545,
+            "reward_parts": {
+              "progress": 0.47383642117247726,
+              "time": -7.999999999999185,
+              "posture": -0.0006132166665966727,
+              "torque_rate": -0.01771848983460327,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.7079999999994,
+            "final_distance": 0.021728920331396007,
+            "final_speed": 0.0026059422743312678,
+            "settled": true,
+            "return_sum": -2.5256327799004397,
+            "posture_rms": 0.005024484141727004,
+            "normalized_torque_change_sum": 2.0186511133286995,
+            "normalized_torque_rate_rms": 5.023259789878164,
+            "reward_parts": {
+              "progress": 0.49505864005065575,
+              "time": -7.999999999999185,
+              "posture": -0.0005049088178093599,
+              "torque_rate": -0.02018651113328694,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 3,
+      "training_steps": 24576,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.0022479051258414984,
+            "critic_loss": 0.024266870692372322
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0015882381703704596,
+            "actor_loss": -0.011509827338159084,
+            "critic_loss": 0.023092202842235565
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.000738779257517308,
+            "actor_loss": 0.07127168774604797,
+            "critic_loss": 0.02126731351017952
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0015264085959643126,
+            "actor_loss": -0.02059525065124035,
+            "critic_loss": 0.024538429453969002
+          }
+        ],
+        "final_kl": 0.001321072457358241
+      },
+      "episodes": [],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5412395491693474,
+        "mean_posture_rms": 0.005240206603855771,
+        "mean_torque_rate_rms": 4.674172336849592,
+        "mean_arrival_time": 17.312800000000184,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.534000000000855,
+            "final_distance": 0.0008914885594923732,
+            "final_speed": 0.001945397987531119,
+            "settled": true,
+            "return_sum": -2.5198718749602813,
+            "posture_rms": 0.005333445663797166,
+            "normalized_torque_change_sum": 1.751998498829875,
+            "normalized_torque_rate_rms": 4.679741577840787,
+            "reward_parts": {
+              "progress": 0.49821702288101505,
+              "time": -7.999999999999185,
+              "posture": -0.0005689128529735774,
+              "torque_rate": -0.01751998498829869,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.69600000000107,
+            "final_distance": 0.01873156439615368,
+            "final_speed": 0.002057815963901544,
+            "settled": true,
+            "return_sum": -2.5527724587372154,
+            "posture_rms": 0.004920249985268652,
+            "normalized_torque_change_sum": 1.4825152746549821,
+            "normalized_torque_rate_rms": 4.3048160161830245,
+            "reward_parts": {
+              "progress": 0.46253687120769443,
+              "time": -7.999999999999185,
+              "posture": -0.0004841771983507588,
+              "torque_rate": -0.01482515274654996,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.253999999998545,
+            "final_distance": 0.022446980017513534,
+            "final_speed": 0.0007685191694209623,
+            "settled": true,
+            "return_sum": -2.5628045541643862,
+            "posture_rms": 0.005404303373005464,
+            "normalized_torque_change_sum": 1.7326464230399892,
+            "normalized_torque_rate_rms": 4.653824264838383,
+            "reward_parts": {
+              "progress": 0.4551060399649758,
+              "time": -7.999999999999185,
+              "posture": -0.0005841298989496074,
+              "torque_rate": -0.017326464230400077,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.2680000000011,
+            "final_distance": 0.017831828949292926,
+            "final_speed": 0.0021501016759728044,
+            "settled": true,
+            "return_sum": -2.5448855460820834,
+            "posture_rms": 0.005528348658096588,
+            "normalized_torque_change_sum": 1.7727517860094535,
+            "normalized_torque_rate_rms": 4.707376904935116,
+            "reward_parts": {
+              "progress": 0.4734532245557285,
+              "time": -7.999999999999185,
+              "posture": -0.0006112527777096115,
+              "torque_rate": -0.017727517860094556,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.811999999999344,
+            "final_distance": 0.021837761873159584,
+            "final_speed": 0.002625654768646956,
+            "settled": true,
+            "return_sum": -2.525863311902771,
+            "posture_rms": 0.005014685339110986,
+            "normalized_torque_change_sum": 2.0201327488898744,
+            "normalized_torque_rate_rms": 5.02510292045065,
+            "reward_parts": {
+              "progress": 0.4948409569671315,
+              "time": -7.999999999999185,
+              "posture": -0.0005029413810059302,
+              "torque_rate": -0.020201327488898975,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 4,
+      "training_steps": 32768,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": 0.040572866797447205,
+            "critic_loss": 0.05119568482041359
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0012061238521710038,
+            "actor_loss": -0.012966863811016083,
+            "critic_loss": 0.037849586457014084
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0009037649724632502,
+            "actor_loss": 0.0005917825037613511,
+            "critic_loss": 0.04004532843828201
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0019464867655187845,
+            "actor_loss": 0.06675121188163757,
+            "critic_loss": 0.03433021903038025
+          }
+        ],
+        "final_kl": 0.0009505656780675054
+      },
+      "episodes": [
+        {
+          "duration": 25.125999999996953,
+          "failed": false,
+          "arrival_time": 25.125999999996953,
+          "final_distance": 0.025366537464005374,
+          "final_speed": 0.01713133771154021,
+          "settled": true,
+          "return_sum": 0.3724166930609414,
+          "posture_rms": 0.006039203611745614,
+          "normalized_torque_change_sum": 15.119203452299567,
+          "normalized_torque_rate_rms": 17.345538211854265,
+          "reward_parts": {
+            "progress": 0.5492669250719857,
+            "time": -5.025199999999512,
+            "posture": -0.00045819748805810004,
+            "torque_rate": -0.15119203452299587,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.541496597991819,
+        "mean_posture_rms": 0.005237708714908173,
+        "mean_torque_rate_rms": 4.679938767366499,
+        "mean_arrival_time": 17.29160000000017,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.540000000000857,
+            "final_distance": 0.0009308940041796306,
+            "final_speed": 0.001915717178200189,
+            "settled": true,
+            "return_sum": -2.520450270127326,
+            "posture_rms": 0.005339480430386767,
+            "normalized_torque_change_sum": 1.8018281093635349,
+            "normalized_torque_rate_rms": 4.74582462455606,
+            "reward_parts": {
+              "progress": 0.4981382119916419,
+              "time": -7.999999999999185,
+              "posture": -0.0005702010253297066,
+              "torque_rate": -0.01801828109363517,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.758000000001037,
+            "final_distance": 0.018887014141289737,
+            "final_speed": 0.0022306503627144937,
+            "settled": true,
+            "return_sum": -2.553057147956167,
+            "posture_rms": 0.004911941375104627,
+            "normalized_torque_change_sum": 1.480057631215087,
+            "normalized_torque_rate_rms": 4.3012463763643085,
+            "reward_parts": {
+              "progress": 0.46222597171742347,
+              "time": -7.999999999999185,
+              "posture": -0.0004825433614493299,
+              "torque_rate": -0.014800576312150957,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.361999999998485,
+            "final_distance": 0.022597932191799685,
+            "final_speed": 0.0011310715705798134,
+            "settled": true,
+            "return_sum": -2.5629792644080243,
+            "posture_rms": 0.005398576834115475,
+            "normalized_torque_change_sum": 1.7200507387727315,
+            "normalized_torque_rate_rms": 4.636877638525492,
+            "reward_parts": {
+              "progress": 0.4548041356164019,
+              "time": -7.999999999999185,
+              "posture": -0.0005828926366770079,
+              "torque_rate": -0.017200507387727153,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.124000000001052,
+            "final_distance": 0.01811296747420086,
+            "final_speed": 0.0021624449211642698,
+            "settled": true,
+            "return_sum": -2.545454280850946,
+            "posture_rms": 0.005525654186723528,
+            "normalized_torque_change_sum": 1.773457127301774,
+            "normalized_torque_rate_rms": 4.708313295785491,
+            "reward_parts": {
+              "progress": 0.47289094750591515,
+              "time": -7.999999999999185,
+              "posture": -0.0006106570838251496,
+              "torque_rate": -0.017734571273017505,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.67399999999942,
+            "final_distance": 0.021748213228831862,
+            "final_speed": 0.0026148537948552015,
+            "settled": true,
+            "return_sum": -2.5255420266166326,
+            "posture_rms": 0.0050128907482104735,
+            "normalized_torque_change_sum": 2.0059499399339566,
+            "normalized_torque_rate_rms": 5.007431901601145,
+            "reward_parts": {
+              "progress": 0.4950200542557851,
+              "time": -7.999999999999185,
+              "posture": -0.0005025814730699199,
+              "torque_rate": -0.020059499399339754,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 5,
+      "training_steps": 40960,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.04670333117246628,
+            "critic_loss": 0.08041276037693024
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.001083550974726677,
+            "actor_loss": -0.07321186363697052,
+            "critic_loss": 0.07035801559686661
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0006730093155056238,
+            "actor_loss": -0.026560114696621895,
+            "critic_loss": 0.05878514051437378
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.00167285546194762,
+            "actor_loss": -0.018975883722305298,
+            "critic_loss": 0.06251472979784012
+          }
+        ],
+        "final_kl": 0.0012478764401748776
+      },
+      "episodes": [
+        {
+          "duration": 15.912000000001983,
+          "failed": false,
+          "arrival_time": 15.912000000001983,
+          "final_distance": 0.027360555484461348,
+          "final_speed": 0.0056153197597758435,
+          "settled": true,
+          "return_sum": 2.22450910322202,
+          "posture_rms": 0.008652566453705032,
+          "normalized_torque_change_sum": 10.345956965227275,
+          "normalized_torque_rate_rms": 18.030507501663187,
+          "reward_parts": {
+            "progress": 0.5109643139803184,
+            "time": -3.182399999999715,
+            "posture": -0.0005956411060119533,
+            "torque_rate": -0.1034595696522729,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5409819589253915,
+        "mean_posture_rms": 0.005281833272314601,
+        "mean_torque_rate_rms": 4.614440407366245,
+        "mean_arrival_time": 17.367600000000138,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.534000000000855,
+            "final_distance": 0.0009531492107851241,
+            "final_speed": 0.0018878284569310377,
+            "settled": true,
+            "return_sum": -2.520080827735539,
+            "posture_rms": 0.005347423771003709,
+            "normalized_torque_change_sum": 1.7602630494226816,
+            "normalized_torque_rate_rms": 4.690766261260722,
+            "reward_parts": {
+              "progress": 0.49809370157842503,
+              "time": -7.999999999999185,
+              "posture": -0.0005718988197339524,
+              "torque_rate": -0.017602630494226758,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.76800000000103,
+            "final_distance": 0.018816882576212543,
+            "final_speed": 0.0021895525004168655,
+            "settled": true,
+            "return_sum": -2.5529346395967183,
+            "posture_rms": 0.004932040269921054,
+            "normalized_torque_change_sum": 1.4814374019822312,
+            "normalized_torque_rate_rms": 4.3032508089555375,
+            "reward_parts": {
+              "progress": 0.46236623484757566,
+              "time": -7.999999999999185,
+              "posture": -0.0004865004244824944,
+              "torque_rate": -0.014814374019822366,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.343999999998495,
+            "final_distance": 0.02251801644541852,
+            "final_speed": 0.0011315560055718157,
+            "settled": true,
+            "return_sum": -2.5629325047881166,
+            "posture_rms": 0.005411668005531039,
+            "normalized_torque_change_sum": 1.7310748885257254,
+            "normalized_torque_rate_rms": 4.651713244232694,
+            "reward_parts": {
+              "progress": 0.4549639671091638,
+              "time": -7.999999999999185,
+              "posture": -0.0005857230120418085,
+              "torque_rate": -0.017310748885257122,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.174000000001069,
+            "final_distance": 0.01797806635574854,
+            "final_speed": 0.0021575895081495564,
+            "settled": true,
+            "return_sum": -2.5451612996135724,
+            "posture_rms": 0.005545432552575604,
+            "normalized_torque_change_sum": 1.7707012912480395,
+            "normalized_torque_rate_rms": 4.704653668507264,
+            "reward_parts": {
+              "progress": 0.4731607497428157,
+              "time": -7.999999999999185,
+              "posture": -0.0006150364439033483,
+              "torque_rate": -0.017707012912480575,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 21.01799999999923,
+            "final_distance": 0.021972717419734392,
+            "final_speed": 0.002477501707627875,
+            "settled": true,
+            "return_sum": -2.523800522893013,
+            "posture_rms": 0.005172601762541603,
+            "normalized_torque_change_sum": 1.7836452587121225,
+            "normalized_torque_rate_rms": 4.721818053875007,
+            "reward_parts": {
+              "progress": 0.494571045873982,
+              "time": -7.999999999999185,
+              "posture": -0.0005351161798770091,
+              "torque_rate": -0.017836452587120997,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 6,
+      "training_steps": 49152,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.047737546265125275,
+            "critic_loss": 0.0864088386297226
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0013317917473614216,
+            "actor_loss": -0.03043411672115326,
+            "critic_loss": 0.05943452566862106
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0010243416763842106,
+            "actor_loss": -0.005101761315017939,
+            "critic_loss": 0.05955588072538376
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0016146983252838254,
+            "actor_loss": 0.007215811405330896,
+            "critic_loss": 0.064332515001297
+          }
+        ],
+        "final_kl": 0.0009713403997011483
+      },
+      "episodes": [
+        {
+          "duration": 12.960000000000997,
+          "failed": false,
+          "arrival_time": 12.960000000000997,
+          "final_distance": 0.0055512297849859915,
+          "final_speed": 0.023856292890457938,
+          "settled": true,
+          "return_sum": 2.911291088689185,
+          "posture_rms": 0.008536896379724277,
+          "normalized_torque_change_sum": 8.513419841414445,
+          "normalized_torque_rate_rms": 18.123185138399837,
+          "reward_parts": {
+            "progress": 0.5888975404300292,
+            "time": -2.59199999999978,
+            "posture": -0.0004722533266920449,
+            "torque_rate": -0.08513419841414435,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.541246040716747,
+        "mean_posture_rms": 0.005326224629132309,
+        "mean_torque_rate_rms": 4.632126323880463,
+        "mean_arrival_time": 17.36440000000013,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.538000000000856,
+            "final_distance": 0.0009312809449455851,
+            "final_speed": 0.0019011755811651956,
+            "settled": true,
+            "return_sum": -2.520003103673614,
+            "posture_rms": 0.005350747341442884,
+            "normalized_torque_change_sum": 1.7567931841480275,
+            "normalized_torque_rate_rms": 4.68614071511398,
+            "reward_parts": {
+              "progress": 0.4981374381101079,
+              "time": -7.999999999999185,
+              "posture": -0.0005726099422392036,
+              "torque_rate": -0.017567931841480353,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.774000000001028,
+            "final_distance": 0.018917315647481333,
+            "final_speed": 0.002261358497806121,
+            "settled": true,
+            "return_sum": -2.5531629248227086,
+            "posture_rms": 0.004932873230973836,
+            "normalized_torque_change_sum": 1.4841628761479106,
+            "normalized_torque_rate_rms": 4.307207442397861,
+            "reward_parts": {
+              "progress": 0.46216536870503594,
+              "time": -7.999999999999185,
+              "posture": -0.0004866647662572007,
+              "torque_rate": -0.014841628761479158,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.359999999998486,
+            "final_distance": 0.02262619342290346,
+            "final_speed": 0.0011196730589241683,
+            "settled": true,
+            "return_sum": -2.5638228458728873,
+            "posture_rms": 0.005678626383976806,
+            "normalized_torque_change_sum": 1.7925523074915597,
+            "normalized_torque_rate_rms": 4.733593121894066,
+            "reward_parts": {
+              "progress": 0.4547476131541914,
+              "time": -7.999999999999185,
+              "posture": -0.000644935952175997,
+              "torque_rate": -0.017925523074915222,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.138000000001057,
+            "final_distance": 0.018041412913637016,
+            "final_speed": 0.00213991673151401,
+            "settled": true,
+            "return_sum": -2.5453527193653867,
+            "posture_rms": 0.005556922449838388,
+            "normalized_torque_change_sum": 1.7769188250136587,
+            "normalized_torque_rate_rms": 4.712906249085479,
+            "reward_parts": {
+              "progress": 0.4730340566270402,
+              "time": -7.999999999999185,
+              "posture": -0.0006175877422704023,
+              "torque_rate": -0.017769188250136504,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 21.011999999999233,
+            "final_distance": 0.022026903597767298,
+            "final_speed": 0.0025256359941559035,
+            "settled": true,
+            "return_sum": -2.5238886098491378,
+            "posture_rms": 0.005111953739429631,
+            "normalized_torque_change_sum": 1.7828641946399428,
+            "normalized_torque_rate_rms": 4.720784090910933,
+            "reward_parts": {
+              "progress": 0.4944626735179162,
+              "time": -7.999999999999185,
+              "posture": -0.00052264142068141,
+              "torque_rate": -0.017828641946399507,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 7,
+      "training_steps": 57344,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.022411571815609932,
+            "critic_loss": 0.10497134178876877
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0006044571055099368,
+            "actor_loss": 0.09080058336257935,
+            "critic_loss": 0.06329990923404694
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0012977883452549577,
+            "actor_loss": -0.022016622126102448,
+            "critic_loss": 0.07521563023328781
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.00099429942201823,
+            "actor_loss": -0.02239733375608921,
+            "critic_loss": 0.06681264936923981
+          }
+        ],
+        "final_kl": 0.0009702750248834491
+      },
+      "episodes": [
+        {
+          "duration": 18.542000000000602,
+          "failed": false,
+          "arrival_time": 18.542000000000602,
+          "final_distance": 0.022371325627035497,
+          "final_speed": 0.00995822113880497,
+          "settled": true,
+          "return_sum": 1.7321047724557581,
+          "posture_rms": 0.007023553811571569,
+          "normalized_torque_change_sum": 11.42952350033592,
+          "normalized_torque_rate_rms": 17.555806130281674,
+          "reward_parts": {
+            "progress": 0.555257348745929,
+            "time": -3.708399999999657,
+            "posture": -0.00045734128680342367,
+            "torque_rate": -0.11429523500335965,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5411038881529144,
+        "mean_posture_rms": 0.005346721725294379,
+        "mean_torque_rate_rms": 4.631116597466322,
+        "mean_arrival_time": 17.444400000000122,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.538000000000856,
+            "final_distance": 0.0009503551489533079,
+            "final_speed": 0.0019075788034616068,
+            "settled": true,
+            "return_sum": -2.5200677514447323,
+            "posture_rms": 0.005368176883796865,
+            "normalized_torque_change_sum": 1.7590694685696862,
+            "normalized_torque_rate_rms": 4.689175658590712,
+            "reward_parts": {
+              "progress": 0.4980992897020932,
+              "time": -7.999999999999185,
+              "posture": -0.0005763464611146626,
+              "torque_rate": -0.017590694685696903,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.778000000001025,
+            "final_distance": 0.018829854128181892,
+            "final_speed": 0.0021920668373913506,
+            "settled": true,
+            "return_sum": -2.553001433376495,
+            "posture_rms": 0.004946560566643364,
+            "normalized_torque_change_sum": 1.4852355891331352,
+            "normalized_torque_rate_rms": 4.308763728050381,
+            "reward_parts": {
+              "progress": 0.4623402917436373,
+              "time": -7.999999999999185,
+              "posture": -0.0004893692287894582,
+              "torque_rate": -0.014852355891331104,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.393999999998467,
+            "final_distance": 0.022643411612589273,
+            "final_speed": 0.001223991596347205,
+            "settled": true,
+            "return_sum": -2.5638339029175787,
+            "posture_rms": 0.005692233291514104,
+            "normalized_torque_change_sum": 1.7899049295502922,
+            "normalized_torque_rate_rms": 4.730096364703075,
+            "reward_parts": {
+              "progress": 0.4547131767748211,
+              "time": -7.999999999999185,
+              "posture": -0.0006480303969004771,
+              "torque_rate": -0.017899049295502945,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.338000000001124,
+            "final_distance": 0.01769827954098732,
+            "final_speed": 0.0021012759241019942,
+            "settled": true,
+            "return_sum": -2.5446497028677237,
+            "posture_rms": 0.005584526743388979,
+            "normalized_torque_change_sum": 1.7746287461112735,
+            "normalized_torque_rate_rms": 4.709868291830366,
+            "reward_parts": {
+              "progress": 0.4737203233723426,
+              "time": -7.999999999999185,
+              "posture": -0.0006237387789525799,
+              "torque_rate": -0.017746287461112793,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 21.173999999999143,
+            "final_distance": 0.022074554517813632,
+            "final_speed": 0.002330573288557306,
+            "settled": true,
+            "return_sum": -2.523966650158043,
+            "posture_rms": 0.005142111141128584,
+            "normalized_torque_change_sum": 1.7805195696115945,
+            "normalized_torque_rate_rms": 4.71767894415708,
+            "reward_parts": {
+              "progress": 0.4943673716778241,
+              "time": -7.999999999999185,
+              "posture": -0.0005288261397544127,
+              "torque_rate": -0.01780519569611595,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 8,
+      "training_steps": 65536,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 7.275957614183426e-12,
+            "actor_loss": -0.04829012230038643,
+            "critic_loss": 0.08136778324842453
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0014136049430817366,
+            "actor_loss": 0.00748342415317893,
+            "critic_loss": 0.05409526452422142
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0016557204071432352,
+            "actor_loss": 0.044463399797677994,
+            "critic_loss": 0.03529253974556923
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0008925579604692757,
+            "actor_loss": 0.035753797739744186,
+            "critic_loss": 0.052754368633031845
+          }
+        ],
+        "final_kl": 0.0016433874843642116
+      },
+      "episodes": [
+        {
+          "duration": 26.151999999996384,
+          "failed": false,
+          "arrival_time": 26.151999999996384,
+          "final_distance": 0.02480595838225187,
+          "final_speed": 0.008738987560501753,
+          "settled": true,
+          "return_sum": 0.1595879450795037,
+          "posture_rms": 0.006754392326293474,
+          "normalized_torque_change_sum": 15.98035872939194,
+          "normalized_torque_rate_rms": 17.47937140672641,
+          "reward_parts": {
+            "progress": 0.5503880832354994,
+            "time": -5.23039999999949,
+            "posture": -0.000596550862060325,
+            "torque_rate": -0.15980358729391927,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5403326364193766,
+        "mean_posture_rms": 0.005380209163865902,
+        "mean_torque_rate_rms": 4.62613411751961,
+        "mean_arrival_time": 17.53080000000017,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.54600000000086,
+            "final_distance": 0.0010177464629947412,
+            "final_speed": 0.0018527521884779067,
+            "settled": true,
+            "return_sum": -2.5201306368212157,
+            "posture_rms": 0.005402180769876592,
+            "normalized_torque_change_sum": 1.7511472753803767,
+            "normalized_torque_rate_rms": 4.678604593492946,
+            "reward_parts": {
+              "progress": 0.49796450707400874,
+              "time": -7.999999999999185,
+              "posture": -0.0005836711414085316,
+              "torque_rate": -0.017511472753804085,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.71800000000106,
+            "final_distance": 0.018708236137487424,
+            "final_speed": 0.0021094088089799777,
+            "settled": true,
+            "return_sum": -2.552746866099264,
+            "posture_rms": 0.004983158836871145,
+            "normalized_torque_change_sum": 1.483375638442478,
+            "normalized_torque_rate_rms": 4.3060649647363185,
+            "reward_parts": {
+              "progress": 0.4625835277250252,
+              "time": -7.999999999999185,
+              "posture": -0.0004966374398697759,
+              "torque_rate": -0.014833756384424785,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.3359999999985,
+            "final_distance": 0.022511357217230372,
+            "final_speed": 0.0011177250328151572,
+            "settled": true,
+            "return_sum": -2.5636012489353255,
+            "posture_rms": 0.005713758551949364,
+            "normalized_torque_change_sum": 1.792559376507517,
+            "normalized_torque_rate_rms": 4.733602455460571,
+            "reward_parts": {
+              "progress": 0.45497728556553946,
+              "time": -7.999999999999185,
+              "posture": -0.0006529407357995375,
+              "torque_rate": -0.017925593765075028,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.8640000000013,
+            "final_distance": 0.016113228858648805,
+            "final_speed": 0.001024604144590552,
+            "settled": true,
+            "return_sum": -2.541384124333916,
+            "posture_rms": 0.00562227039115072,
+            "normalized_torque_change_sum": 1.7642350583914141,
+            "normalized_torque_rate_rms": 4.696055603364487,
+            "reward_parts": {
+              "progress": 0.4768904247370209,
+              "time": -7.999999999999185,
+              "posture": -0.0006321984870242476,
+              "torque_rate": -0.017642350583914057,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 21.189999999999134,
+            "final_distance": 0.02199254633781502,
+            "final_speed": 0.00224502581898174,
+            "settled": true,
+            "return_sum": -2.523800305907163,
+            "posture_rms": 0.005179677269481694,
+            "normalized_torque_change_sum": 1.7795112812639209,
+            "normalized_torque_rate_rms": 4.716342970543727,
+            "reward_parts": {
+              "progress": 0.49453138803782143,
+              "time": -7.999999999999185,
+              "posture": -0.0005365811323197458,
+              "torque_rate": -0.01779511281263927,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 9,
+      "training_steps": 73728,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": 0.006838250905275345,
+            "critic_loss": 0.03723631799221039
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0016170167364180088,
+            "actor_loss": 0.007427412550896406,
+            "critic_loss": 0.03254241123795509
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0008415922056883574,
+            "actor_loss": -0.04230185225605965,
+            "critic_loss": 0.03782511129975319
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0012766252039000392,
+            "actor_loss": 0.005117935594171286,
+            "critic_loss": 0.03627832606434822
+          }
+        ],
+        "final_kl": 0.0014235159615054727
+      },
+      "episodes": [
+        {
+          "duration": 16.020000000002,
+          "failed": false,
+          "arrival_time": 16.020000000002,
+          "final_distance": 0.0281261047913422,
+          "final_speed": 0.0023410193313494368,
+          "settled": true,
+          "return_sum": 2.199590484602513,
+          "posture_rms": 0.008619812270008182,
+          "normalized_torque_change_sum": 10.524757844383208,
+          "normalized_torque_rate_rms": 18.124239916373092,
+          "reward_parts": {
+            "progress": 0.5094332153665572,
+            "time": -3.2039999999997124,
+            "posture": -0.0005951523201972449,
+            "torque_rate": -0.10524757844383154,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5410147506463394,
+        "mean_posture_rms": 0.005359633136471122,
+        "mean_torque_rate_rms": 4.637247456825704,
+        "mean_arrival_time": 17.410800000000144,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.54800000000086,
+            "final_distance": 0.00104216004888055,
+            "final_speed": 0.0018602297119602103,
+            "settled": true,
+            "return_sum": -2.5202705186162175,
+            "posture_rms": 0.005389722766853735,
+            "normalized_torque_change_sum": 1.760521628839118,
+            "normalized_torque_rate_rms": 4.691110781093047,
+            "reward_parts": {
+              "progress": 0.49791567990223357,
+              "time": -7.999999999999185,
+              "posture": -0.000580982230070872,
+              "torque_rate": -0.01760521628839108,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.758000000001037,
+            "final_distance": 0.018771278177758248,
+            "final_speed": 0.0021251979948233024,
+            "settled": true,
+            "return_sum": -2.55286434861498,
+            "posture_rms": 0.004946569936499917,
+            "normalized_torque_change_sum": 1.4832421176725572,
+            "normalized_torque_rate_rms": 4.305871162831703,
+            "reward_parts": {
+              "progress": 0.4624574436444857,
+              "time": -7.999999999999185,
+              "posture": -0.0004893710827337317,
+              "torque_rate": -0.014832421176725516,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.287999999998526,
+            "final_distance": 0.02238079277581394,
+            "final_speed": 0.0010094736701248413,
+            "settled": true,
+            "return_sum": -2.5633291211202027,
+            "posture_rms": 0.005689950895224172,
+            "normalized_torque_change_sum": 1.7920024744764353,
+            "normalized_torque_rate_rms": 4.732867094156978,
+            "reward_parts": {
+              "progress": 0.4552384144483719,
+              "time": -7.999999999999185,
+              "posture": -0.0006475108238012944,
+              "torque_rate": -0.017920024744764645,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.338000000001124,
+            "final_distance": 0.01765220903321281,
+            "final_speed": 0.0020818051300162312,
+            "settled": true,
+            "return_sum": -2.54452234393312,
+            "posture_rms": 0.005603399753143681,
+            "normalized_torque_change_sum": 1.7706846545150297,
+            "normalized_torque_rate_rms": 4.704631567023728,
+            "reward_parts": {
+              "progress": 0.47381246438788793,
+              "time": -7.999999999999185,
+              "posture": -0.0006279617758706592,
+              "torque_rate": -0.017706846545150482,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 21.121999999999172,
+            "final_distance": 0.022003137984832898,
+            "final_speed": 0.0023501254885770822,
+            "settled": true,
+            "return_sum": -2.5240874209471795,
+            "posture_rms": 0.005168522330634104,
+            "normalized_torque_change_sum": 1.8063353229313808,
+            "normalized_torque_rate_rms": 4.751756679023064,
+            "reward_parts": {
+              "progress": 0.4945102047437865,
+              "time": -7.999999999999185,
+              "posture": -0.000534272461645307,
+              "torque_rate": -0.018063353229313746,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 10,
+      "training_steps": 81920,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.06681814789772034,
+            "critic_loss": 0.09722384810447693
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0009423313895240426,
+            "actor_loss": -0.025630280375480652,
+            "critic_loss": 0.06956633925437927
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0007584976847283542,
+            "actor_loss": 0.04628220200538635,
+            "critic_loss": 0.05176766961812973
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0011132790241390467,
+            "actor_loss": -0.0527057908475399,
+            "critic_loss": 0.07733894139528275
+          }
+        ],
+        "final_kl": 0.0016945777460932732
+      },
+      "episodes": [
+        {
+          "duration": 12.960000000000997,
+          "failed": false,
+          "arrival_time": 12.960000000000997,
+          "final_distance": 0.007202874435499429,
+          "final_speed": 0.02360771151490647,
+          "settled": true,
+          "return_sum": 2.90750266515796,
+          "posture_rms": 0.009224953143786001,
+          "normalized_torque_change_sum": 8.554013952296627,
+          "normalized_torque_rate_rms": 18.16634168955843,
+          "reward_parts": {
+            "progress": 0.5855942511290001,
+            "time": -2.59199999999978,
+            "posture": -0.0005514464480727485,
+            "torque_rate": -0.08554013952296599,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.54085000519808,
+        "mean_posture_rms": 0.005384535635464649,
+        "mean_torque_rate_rms": 4.63096641613394,
+        "mean_arrival_time": 17.356000000000172,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.552000000000861,
+            "final_distance": 0.0011410126493532299,
+            "final_speed": 0.0017854878319670247,
+            "settled": true,
+            "return_sum": -2.5204897306761853,
+            "posture_rms": 0.005418167333829688,
+            "normalized_torque_change_sum": 1.762057463231948,
+            "normalized_torque_rate_rms": 4.693156538024028,
+            "reward_parts": {
+              "progress": 0.49771797470129653,
+              "time": -7.999999999999185,
+              "posture": -0.0005871307451476251,
+              "torque_rate": -0.017620574632319436,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.71800000000106,
+            "final_distance": 0.01868042505572782,
+            "final_speed": 0.0021000098138183034,
+            "settled": true,
+            "return_sum": -2.552724725633391,
+            "posture_rms": 0.004982896845839411,
+            "normalized_torque_change_sum": 1.4867290302408838,
+            "normalized_torque_rate_rms": 4.31092946799296,
+            "reward_parts": {
+              "progress": 0.46263914988854876,
+              "time": -7.999999999999185,
+              "posture": -0.0004965852195255633,
+              "torque_rate": -0.014867290302408897,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.24399999999855,
+            "final_distance": 0.022233551028078564,
+            "final_speed": 0.0009886399216118419,
+            "settled": true,
+            "return_sum": -2.5630273838711126,
+            "posture_rms": 0.005685971795671123,
+            "normalized_torque_change_sum": 1.7913676309728495,
+            "normalized_torque_rate_rms": 4.732028675648427,
+            "reward_parts": {
+              "progress": 0.4555328979438448,
+              "time": -7.999999999999185,
+              "posture": -0.0006466055052233973,
+              "torque_rate": -0.01791367630972831,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.32600000000112,
+            "final_distance": 0.01765857574246277,
+            "final_speed": 0.002068689228343093,
+            "settled": true,
+            "return_sum": -2.544547067412863,
+            "posture_rms": 0.00563741675366041,
+            "normalized_torque_change_sum": 1.7711189029172556,
+            "normalized_torque_rate_rms": 4.705208421150344,
+            "reward_parts": {
+              "progress": 0.47379973096939,
+              "time": -7.999999999999185,
+              "posture": -0.0006356093530890679,
+              "torque_rate": -0.01771118902917279,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.939999999999273,
+            "final_distance": 0.021831717323308443,
+            "final_speed": 0.0025085898987023225,
+            "settled": true,
+            "return_sum": -2.523461118396849,
+            "posture_rms": 0.005198225448322611,
+            "normalized_torque_change_sum": 1.7773733507449225,
+            "normalized_torque_rate_rms": 4.713508977853942,
+            "reward_parts": {
+              "progress": 0.4948530460668348,
+              "time": -7.999999999999185,
+              "posture": -0.0005404309562318157,
+              "torque_rate": -0.017773733507449416,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 11,
+      "training_steps": 90112,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": 0.014874020591378212,
+            "critic_loss": 0.0749431848526001
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0009709280566312373,
+            "actor_loss": 0.053127188235521317,
+            "critic_loss": 0.055719368159770966
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0011092866770923138,
+            "actor_loss": 0.00735790329053998,
+            "critic_loss": 0.05932456627488136
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0008717061718925834,
+            "actor_loss": -0.0025155607145279646,
+            "critic_loss": 0.044998567551374435
+          }
+        ],
+        "final_kl": 0.0013167663710191846
+      },
+      "episodes": [
+        {
+          "duration": 18.522000000000613,
+          "failed": false,
+          "arrival_time": 18.522000000000613,
+          "final_distance": 0.022558936893735292,
+          "final_speed": 0.008883951694812797,
+          "settled": true,
+          "return_sum": 1.7352894501102685,
+          "posture_rms": 0.007043788776885478,
+          "normalized_torque_change_sum": 11.473319195462505,
+          "normalized_torque_rate_rms": 17.598903109456415,
+          "reward_parts": {
+            "progress": 0.5548821262125277,
+            "time": -3.7043999999996573,
+            "posture": -0.00045948414764742724,
+            "torque_rate": -0.11473319195462507,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.54106237487827,
+        "mean_posture_rms": 0.00539853904982387,
+        "mean_torque_rate_rms": 4.6485777219176985,
+        "mean_arrival_time": 17.36560000000016,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.544000000000858,
+            "final_distance": 0.0010674913612676426,
+            "final_speed": 0.0018307657666603184,
+            "settled": true,
+            "return_sum": -2.520723377053847,
+            "posture_rms": 0.005432323688843314,
+            "normalized_torque_change_sum": 1.7998191518115392,
+            "normalized_torque_rate_rms": 4.743178195855877,
+            "reward_parts": {
+              "progress": 0.49786501727746607,
+              "time": -7.999999999999185,
+              "posture": -0.0005902028132074077,
+              "torque_rate": -0.01799819151811525,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.724000000001055,
+            "final_distance": 0.018776475826769296,
+            "final_speed": 0.0021693599514125777,
+            "settled": true,
+            "return_sum": -2.552904193815399,
+            "posture_rms": 0.004989152672079848,
+            "normalized_torque_change_sum": 1.4853409274168778,
+            "normalized_torque_rate_rms": 4.308916521900771,
+            "reward_parts": {
+              "progress": 0.4624470483464628,
+              "time": -7.999999999999185,
+              "posture": -0.0004978328877064661,
+              "torque_rate": -0.014853409274168726,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.291999999998524,
+            "final_distance": 0.022359679811933836,
+            "final_speed": 0.0010818347762101587,
+            "settled": true,
+            "return_sum": -2.563279297704112,
+            "posture_rms": 0.00568790195789689,
+            "normalized_torque_change_sum": 1.7912893506612109,
+            "normalized_torque_rate_rms": 4.731925282933275,
+            "reward_parts": {
+              "progress": 0.45528064037613075,
+              "time": -7.999999999999185,
+              "posture": -0.0006470445736529927,
+              "torque_rate": -0.0179128935066118,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.300000000001111,
+            "final_distance": 0.01770155347619346,
+            "final_speed": 0.0021025171108234194,
+            "settled": true,
+            "return_sum": -2.544654552420492,
+            "posture_rms": 0.0056596399359389125,
+            "normalized_torque_change_sum": 1.7727697438336398,
+            "normalized_torque_rate_rms": 4.707400747537742,
+            "reward_parts": {
+              "progress": 0.47371377550192817,
+              "time": -7.999999999999185,
+              "posture": -0.0006406304840895392,
+              "torque_rate": -0.01772769743833647,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.967999999999257,
+            "final_distance": 0.021830020307046085,
+            "final_speed": 0.002504606881368565,
+            "settled": true,
+            "return_sum": -2.5237504533974993,
+            "posture_rms": 0.005223676994360384,
+            "normalized_torque_change_sum": 1.806115747003715,
+            "normalized_torque_rate_rms": 4.751467861360829,
+            "reward_parts": {
+              "progress": 0.49485644009935836,
+              "time": -7.999999999999185,
+              "posture": -0.0005457360268282386,
+              "torque_rate": -0.018061157470037007,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 12,
+      "training_steps": 98304,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": 0.018433084711432457,
+            "critic_loss": 0.018069269135594368
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0014655248960480094,
+            "actor_loss": 0.0646345317363739,
+            "critic_loss": 0.01735549047589302
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0017071396578103304,
+            "actor_loss": 0.04951273277401924,
+            "critic_loss": 0.013952130451798439
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0011894997442141175,
+            "actor_loss": -0.0007301867590285838,
+            "critic_loss": 0.013991674408316612
+          }
+        ],
+        "final_kl": 0.0010251012863591313
+      },
+      "episodes": [],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.541156607171724,
+        "mean_posture_rms": 0.005405602088352731,
+        "mean_torque_rate_rms": 4.649190751903778,
+        "mean_arrival_time": 17.30800000000017,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.55000000000086,
+            "final_distance": 0.0010617401075813729,
+            "final_speed": 0.0018245059789870363,
+            "settled": true,
+            "return_sum": -2.5207239898164513,
+            "posture_rms": 0.005439687113285545,
+            "normalized_torque_change_sum": 1.800870568348071,
+            "normalized_torque_rate_rms": 4.744563426106702,
+            "reward_parts": {
+              "progress": 0.49787651978484,
+              "time": -7.999999999999185,
+              "posture": -0.0005918039178089399,
+              "torque_rate": -0.018008705683480616,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 17.710000000001063,
+            "final_distance": 0.01888502512912789,
+            "final_speed": 0.0022484199558581034,
+            "settled": true,
+            "return_sum": -2.553143421814643,
+            "posture_rms": 0.0049937146684808816,
+            "normalized_torque_change_sum": 1.487462783258124,
+            "normalized_torque_rate_rms": 4.31199313435506,
+            "reward_parts": {
+              "progress": 0.46222994974174314,
+              "time": -7.999999999999185,
+              "posture": -0.0004987437238040588,
+              "torque_rate": -0.014874627832581358,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.273999999998534,
+            "final_distance": 0.022338826456569996,
+            "final_speed": 0.001046512290288343,
+            "settled": true,
+            "return_sum": -2.5632417824484555,
+            "posture_rms": 0.005692931360281974,
+            "normalized_torque_change_sum": 1.7915940185844792,
+            "normalized_torque_rate_rms": 4.732327675922689,
+            "reward_parts": {
+              "progress": 0.4553223470868591,
+              "time": -7.999999999999185,
+              "posture": -0.0006481893494576868,
+              "torque_rate": -0.017915940185844702,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.160000000001064,
+            "final_distance": 0.01799576168579965,
+            "final_speed": 0.002187630445862758,
+            "settled": true,
+            "return_sum": -2.5452399112669815,
+            "posture_rms": 0.0056704865332545306,
+            "normalized_torque_change_sum": 1.772218199922301,
+            "normalized_torque_rate_rms": 4.706668407592224,
+            "reward_parts": {
+              "progress": 0.4731253590827151,
+              "time": -7.999999999999185,
+              "posture": -0.0006430883504764666,
+              "torque_rate": -0.01772218199922284,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.845999999999325,
+            "final_distance": 0.021675027740994095,
+            "final_speed": 0.00259761033738139,
+            "settled": true,
+            "return_sum": -2.5234339305120868,
+            "posture_rms": 0.005231190766460726,
+            "normalized_torque_change_sum": 1.8053048606837205,
+            "normalized_torque_rate_rms": 4.750401115542217,
+            "reward_parts": {
+              "progress": 0.4951664252314648,
+              "time": -7.999999999999185,
+              "posture": -0.0005473071367021192,
+              "torque_rate": -0.018053048606837232,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 13,
+      "training_steps": 106496,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 7.275957614183426e-12,
+            "actor_loss": 0.013918994925916195,
+            "critic_loss": 0.0398440882563591
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.00086635397747159,
+            "actor_loss": 0.04547315090894699,
+            "critic_loss": 0.03728298097848892
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0016090638237074018,
+            "actor_loss": -0.021464306861162186,
+            "critic_loss": 0.03768093138933182
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0016674981452524662,
+            "actor_loss": -0.004563299473375082,
+            "critic_loss": 0.04225178807973862
+          }
+        ],
+        "final_kl": 0.0006587833049707115
+      },
+      "episodes": [
+        {
+          "duration": 25.88999999999653,
+          "failed": false,
+          "arrival_time": 25.88999999999653,
+          "final_distance": 0.02368258046064309,
+          "final_speed": 0.011505658560282019,
+          "settled": true,
+          "return_sum": 0.2129458543686198,
+          "posture_rms": 0.006834212717243915,
+          "normalized_torque_change_sum": 16.108436954055335,
+          "normalized_torque_rate_rms": 17.637851337620095,
+          "reward_parts": {
+            "progress": 0.55263483907871,
+            "time": -5.1779999999994955,
+            "posture": -0.0006046151695483693,
+            "torque_rate": -0.16108436954055422,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5413202217692774,
+        "mean_posture_rms": 0.005412656434992351,
+        "mean_torque_rate_rms": 4.685312404363884,
+        "mean_arrival_time": 16.854400000000368,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.568000000000866,
+            "final_distance": 0.0011013800651707318,
+            "final_speed": 0.0017839857465576706,
+            "settled": true,
+            "return_sum": -2.5203651515479817,
+            "posture_rms": 0.005450183103523708,
+            "normalized_torque_change_sum": 1.7568301500421601,
+            "normalized_torque_rate_rms": 4.686190017010111,
+            "reward_parts": {
+              "progress": 0.49779723986965596,
+              "time": -7.999999999999185,
+              "posture": -0.0005940899172387496,
+              "torque_rate": -0.01756830150042139,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.594000000001877,
+            "final_distance": 0.018905925811203816,
+            "final_speed": 0.002289954971077196,
+            "settled": true,
+            "return_sum": -2.553169261466934,
+            "posture_rms": 0.005018152602491541,
+            "normalized_torque_change_sum": 1.4853772733686517,
+            "normalized_torque_rate_rms": 4.308969240677714,
+            "reward_parts": {
+              "progress": 0.4621881483775906,
+              "time": -7.999999999999185,
+              "posture": -0.0005036371108378892,
+              "torque_rate": -0.014853772733686576,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.337999999998498,
+            "final_distance": 0.02250409219028333,
+            "final_speed": 0.0012139623709927698,
+            "settled": true,
+            "return_sum": -2.5636134575539833,
+            "posture_rms": 0.005740318075043005,
+            "normalized_torque_change_sum": 1.7946248141358254,
+            "normalized_torque_rate_rms": 4.736328765689322,
+            "reward_parts": {
+              "progress": 0.4549918156194344,
+              "time": -7.999999999999185,
+              "posture": -0.0006590250320533569,
+              "torque_rate": -0.01794624814135839,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.250000000001094,
+            "final_distance": 0.017780709104493184,
+            "final_speed": 0.0021562790706902003,
+            "settled": true,
+            "return_sum": -2.544709213453305,
+            "posture_rms": 0.005672913797288803,
+            "normalized_torque_change_sum": 1.7621038679606051,
+            "normalized_torque_rate_rms": 4.693218336014862,
+            "reward_parts": {
+              "progress": 0.4735554642453284,
+              "time": -7.999999999999185,
+              "posture": -0.0006436390190294401,
+              "torque_rate": -0.017621038679606214,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.521999999999505,
+            "final_distance": 0.02135432708009997,
+            "final_speed": 0.0025992948983524387,
+            "settled": true,
+            "return_sum": -2.5247440248241837,
+            "posture_rms": 0.005181714596614698,
+            "normalized_torque_change_sum": 2.00148480542073,
+            "normalized_torque_rate_rms": 5.0018556624274115,
+            "reward_parts": {
+              "progress": 0.4958078265532534,
+              "time": -7.999999999999185,
+              "posture": -0.0005370033232154356,
+              "torque_rate": -0.02001484805420739,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 14,
+      "training_steps": 114688,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 7.275957614183426e-12,
+            "actor_loss": -0.08531945943832397,
+            "critic_loss": 0.08125688880681992
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0011869707377627492,
+            "actor_loss": 0.041865795850753784,
+            "critic_loss": 0.060259848833084106
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0008775978349149227,
+            "actor_loss": 0.001837344141677022,
+            "critic_loss": 0.05191124230623245
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0006647648988291621,
+            "actor_loss": -0.032020386308431625,
+            "critic_loss": 0.07182128727436066
+          }
+        ],
+        "final_kl": 0.0012217876501381397
+      },
+      "episodes": [
+        {
+          "duration": 18.124000000000834,
+          "failed": false,
+          "arrival_time": 18.124000000000834,
+          "final_distance": 0.02251948863426038,
+          "final_speed": 0.010686573348313123,
+          "settled": true,
+          "return_sum": 1.7792174510044951,
+          "posture_rms": 0.008153394269389212,
+          "normalized_torque_change_sum": 11.602657450725864,
+          "normalized_torque_rate_rms": 17.89108630511091,
+          "reward_parts": {
+            "progress": 0.5206464476807159,
+            "time": -3.624799999999666,
+            "posture": -0.0006024221689719581,
+            "torque_rate": -0.11602657450725802,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.539985794432165,
+        "mean_posture_rms": 0.0054355855768930175,
+        "mean_torque_rate_rms": 4.634587401436717,
+        "mean_arrival_time": 16.989200000000395,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.562000000000864,
+            "final_distance": 0.0010722089643231045,
+            "final_speed": 0.001813612843345462,
+            "settled": true,
+            "return_sum": -2.520714941460504,
+            "posture_rms": 0.005476952204372505,
+            "normalized_torque_change_sum": 1.7970583422875606,
+            "normalized_torque_rate_rms": 4.739538931013519,
+            "reward_parts": {
+              "progress": 0.4978555820713514,
+              "time": -7.999999999999185,
+              "posture": -0.0005999401089796607,
+              "torque_rate": -0.01797058342287536,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.532000000001856,
+            "final_distance": 0.01881505738154557,
+            "final_speed": 0.002157996577327469,
+            "settled": true,
+            "return_sum": -2.5529722487367503,
+            "posture_rms": 0.005017527530659092,
+            "normalized_torque_change_sum": 1.483862232324352,
+            "normalized_torque_rate_rms": 4.306771169223313,
+            "reward_parts": {
+              "progress": 0.46236988523691014,
+              "time": -7.999999999999185,
+              "posture": -0.0005035116504184754,
+              "torque_rate": -0.014838622323243537,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.293999999998523,
+            "final_distance": 0.02251326769525108,
+            "final_speed": 0.0010506801270374873,
+            "settled": true,
+            "return_sum": -2.563662567725472,
+            "posture_rms": 0.005739697020226643,
+            "normalized_torque_change_sum": 1.7977149897297797,
+            "normalized_torque_rate_rms": 4.74040476875345,
+            "reward_parts": {
+              "progress": 0.4549734646094976,
+              "time": -7.999999999999185,
+              "posture": -0.0006588824376800202,
+              "torque_rate": -0.01797714989729784,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.892000000001309,
+            "final_distance": 0.015516320916981846,
+            "final_speed": 0.0010242386955546508,
+            "settled": true,
+            "return_sum": -2.540223734570017,
+            "posture_rms": 0.005698812227326962,
+            "normalized_torque_change_sum": 1.7658445974329986,
+            "normalized_torque_rate_rms": 4.698197257237185,
+            "reward_parts": {
+              "progress": 0.47808424062035065,
+              "time": -7.999999999999185,
+              "posture": -0.0006495292160466733,
+              "torque_rate": -0.01765844597432993,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.665999999999425,
+            "final_distance": 0.02136985543613648,
+            "final_speed": 0.002631722064666746,
+            "settled": true,
+            "return_sum": -2.5223554796680805,
+            "posture_rms": 0.0052449389018798896,
+            "normalized_torque_change_sum": 1.7582061827572442,
+            "normalized_torque_rate_rms": 4.688024880956121,
+            "reward_parts": {
+              "progress": 0.49577676984117475,
+              "time": -7.999999999999185,
+              "posture": -0.0005501876816891005,
+              "torque_rate": -0.01758206182757208,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 15,
+      "training_steps": 122880,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.013201569207012653,
+            "critic_loss": 0.08619803190231323
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0020859038922935724,
+            "actor_loss": 0.004173208028078079,
+            "critic_loss": 0.04218551516532898
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0007640754338353872,
+            "actor_loss": 0.016088126227259636,
+            "critic_loss": 0.0424310639500618
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.001613403670489788,
+            "actor_loss": 0.02631715126335621,
+            "critic_loss": 0.04844387248158455
+          }
+        ],
+        "final_kl": 0.0010347863426432014
+      },
+      "episodes": [
+        {
+          "duration": 13.052000000001028,
+          "failed": false,
+          "arrival_time": 13.052000000001028,
+          "final_distance": 0.006264276126638598,
+          "final_speed": 0.02437687406536581,
+          "settled": true,
+          "return_sum": 2.8921351445107675,
+          "posture_rms": 0.009363231108398117,
+          "normalized_torque_change_sum": 8.43641681843053,
+          "normalized_torque_rate_rms": 17.977342145521458,
+          "reward_parts": {
+            "progress": 0.5874714477467247,
+            "time": -2.610399999999778,
+            "posture": -0.0005721350516468486,
+            "torque_rate": -0.08436416818430542,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.540090622950435,
+        "mean_posture_rms": 0.005422342048797764,
+        "mean_torque_rate_rms": 4.686402894643477,
+        "mean_arrival_time": 16.914000000000435,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.54800000000086,
+            "final_distance": 0.0010748268314436035,
+            "final_speed": 0.001798716407272715,
+            "settled": true,
+            "return_sum": -2.5205163498110785,
+            "posture_rms": 0.005449511035302581,
+            "normalized_torque_change_sum": 1.7772752737719728,
+            "normalized_torque_rate_rms": 4.713378928343021,
+            "reward_parts": {
+              "progress": 0.49785034633711495,
+              "time": -7.999999999999185,
+              "posture": -0.0005939434104777356,
+              "torque_rate": -0.017772752737719753,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.446000000001828,
+            "final_distance": 0.018638785330407352,
+            "final_speed": 0.0020261381881418435,
+            "settled": true,
+            "return_sum": -2.552612711638289,
+            "posture_rms": 0.005012759487985257,
+            "normalized_torque_change_sum": 1.4832585823779876,
+            "normalized_torque_rate_rms": 4.3058950613924205,
+            "reward_parts": {
+              "progress": 0.4627224293391842,
+              "time": -7.999999999999185,
+              "posture": -0.0005025551536877609,
+              "torque_rate": -0.014832585823780014,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.22399999999856,
+            "final_distance": 0.022392454386914413,
+            "final_speed": 0.0008978462186094156,
+            "settled": true,
+            "return_sum": -2.563402539071722,
+            "posture_rms": 0.005735855961903888,
+            "normalized_torque_change_sum": 1.7959629425581154,
+            "normalized_torque_rate_rms": 4.738094214130297,
+            "reward_parts": {
+              "progress": 0.4552150912261738,
+              "time": -7.999999999999185,
+              "posture": -0.0006580008723142156,
+              "torque_rate": -0.017959629425581235,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.966000000001333,
+            "final_distance": 0.015331975238894575,
+            "final_speed": 0.000822510246903703,
+            "settled": true,
+            "return_sum": -2.5398450801924297,
+            "posture_rms": 0.005703963355471736,
+            "normalized_torque_change_sum": 1.7647308209733055,
+            "normalized_torque_rate_rms": 4.696715369507183,
+            "reward_parts": {
+              "progress": 0.4784529319765235,
+              "time": -7.999999999999185,
+              "posture": -0.0006507039592113351,
+              "torque_rate": -0.01764730820973311,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.38599999999958,
+            "final_distance": 0.021113137511133293,
+            "final_speed": 0.0024864709250082212,
+            "settled": true,
+            "return_sum": -2.524076434038655,
+            "posture_rms": 0.005209620403325358,
+            "normalized_torque_change_sum": 1.9823836834902533,
+            "normalized_torque_rate_rms": 4.977930899844464,
+            "reward_parts": {
+              "progress": 0.49629020569118365,
+              "time": -7.999999999999185,
+              "posture": -0.0005428028949349171,
+              "torque_rate": -0.019823836834902454,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 16,
+      "training_steps": 131072,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 7.275957614183426e-12,
+            "actor_loss": -0.0016214707866311073,
+            "critic_loss": 0.08902746438980103
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0006997488089837134,
+            "actor_loss": 0.038636092096567154,
+            "critic_loss": 0.05411168560385704
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0007474784506484866,
+            "actor_loss": -0.01329810731112957,
+            "critic_loss": 0.07861480861902237
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0010125571861863136,
+            "actor_loss": 0.026238245889544487,
+            "critic_loss": 0.06410251557826996
+          }
+        ],
+        "final_kl": 0.0010440138867124915
+      },
+      "episodes": [
+        {
+          "duration": 18.47600000000064,
+          "failed": false,
+          "arrival_time": 18.47600000000064,
+          "final_distance": 0.02194207432281391,
+          "final_speed": 0.010512816657717592,
+          "settled": true,
+          "return_sum": 1.744142488224108,
+          "posture_rms": 0.00770935873361485,
+          "normalized_torque_change_sum": 11.622430987904888,
+          "normalized_torque_rate_rms": 17.734931420362628,
+          "reward_parts": {
+            "progress": 0.5561158513543728,
+            "time": -3.6951999999996583,
+            "posture": -0.0005490532512279792,
+            "torque_rate": -0.11622430987904815,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.539656730567248,
+        "mean_posture_rms": 0.00542850000256033,
+        "mean_torque_rate_rms": 4.639737926389804,
+        "mean_arrival_time": 16.98520000000041,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.54800000000086,
+            "final_distance": 0.0010525654396857968,
+            "final_speed": 0.0018223252294965412,
+            "settled": true,
+            "return_sum": -2.520560817646253,
+            "posture_rms": 0.005450184137620673,
+            "normalized_torque_change_sum": 1.7861596624203797,
+            "normalized_torque_rate_rms": 4.725145053884922,
+            "reward_parts": {
+              "progress": 0.49789486912063424,
+              "time": -7.999999999999185,
+              "posture": -0.0005940901426794834,
+              "torque_rate": -0.017861596624203852,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.448000000001828,
+            "final_distance": 0.018646963178343728,
+            "final_speed": 0.0019825766613207653,
+            "settled": true,
+            "return_sum": -2.5526496767286826,
+            "posture_rms": 0.00499169345069041,
+            "normalized_torque_change_sum": 1.4857410301890905,
+            "normalized_torque_rate_rms": 4.309496824150429,
+            "reward_parts": {
+              "progress": 0.4627060736433143,
+              "time": -7.999999999999185,
+              "posture": -0.000498340070113347,
+              "torque_rate": -0.01485741030189114,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.1519999999986,
+            "final_distance": 0.022282744832060206,
+            "final_speed": 0.0006810052840472386,
+            "settled": true,
+            "return_sum": -2.5631997871397068,
+            "posture_rms": 0.005719540742054973,
+            "normalized_torque_change_sum": 1.7980034549580945,
+            "normalized_torque_rate_rms": 4.740785081289212,
+            "reward_parts": {
+              "progress": 0.45543451033588184,
+              "time": -7.999999999999185,
+              "posture": -0.0006542629260005829,
+              "torque_rate": -0.017980034549581043,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 14.056000000001363,
+            "final_distance": 0.015034907407894236,
+            "final_speed": 0.0006589917687705167,
+            "settled": true,
+            "return_sum": -2.539284669850986,
+            "posture_rms": 0.005675645312333081,
+            "normalized_torque_change_sum": 1.7687478495292133,
+            "normalized_torque_rate_rms": 4.702057860034681,
+            "reward_parts": {
+              "progress": 0.47904706763852545,
+              "time": -7.999999999999185,
+              "posture": -0.0006442589942282167,
+              "torque_rate": -0.017687478495292133,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.721999999999394,
+            "final_distance": 0.021355204588290804,
+            "final_speed": 0.0025859233833696003,
+            "settled": true,
+            "return_sum": -2.522588701470612,
+            "posture_rms": 0.005305436370102509,
+            "normalized_torque_change_sum": 1.7831819905937796,
+            "normalized_torque_rate_rms": 4.721204812589779,
+            "reward_parts": {
+              "progress": 0.4958060715368683,
+              "time": -7.999999999999185,
+              "posture": -0.0005629531015441708,
+              "torque_rate": -0.017831819905938025,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 17,
+      "training_steps": 139264,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.0028822007589042187,
+            "critic_loss": 0.018461063504219055
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0010594212217256427,
+            "actor_loss": -0.03802633658051491,
+            "critic_loss": 0.014379994012415409
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0013433611020445824,
+            "actor_loss": -0.025857416912913322,
+            "critic_loss": 0.012368869036436081
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0012035515392199159,
+            "actor_loss": -0.023717723786830902,
+            "critic_loss": 0.011086325161159039
+          }
+        ],
+        "final_kl": 0.0010705384192988276
+      },
+      "episodes": [],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5395640539272226,
+        "mean_posture_rms": 0.0054282515200374205,
+        "mean_torque_rate_rms": 4.638032751929847,
+        "mean_arrival_time": 16.972400000000437,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.542000000000858,
+            "final_distance": 0.0010024257491601176,
+            "final_speed": 0.0018512359857584817,
+            "settled": true,
+            "return_sum": -2.5204677467807968,
+            "posture_rms": 0.005462636722662002,
+            "normalized_torque_change_sum": 1.7866087283204706,
+            "normalized_torque_rate_rms": 4.725739000834078,
+            "reward_parts": {
+              "progress": 0.4979951485016803,
+              "time": -7.999999999999185,
+              "posture": -0.0005968079992755527,
+              "torque_rate": -0.017866087283204546,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.546000000001861,
+            "final_distance": 0.01882657544124263,
+            "final_speed": 0.0021037791670410195,
+            "settled": true,
+            "return_sum": -2.553012016597026,
+            "posture_rms": 0.004997191433029144,
+            "normalized_torque_change_sum": 1.4859427270182712,
+            "normalized_torque_rate_rms": 4.309789332174702,
+            "reward_parts": {
+              "progress": 0.46234684911751495,
+              "time": -7.999999999999185,
+              "posture": -0.0004994384443668337,
+              "torque_rate": -0.014859427270182638,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.179999999998586,
+            "final_distance": 0.02241758110747666,
+            "final_speed": 0.0007427839942560285,
+            "settled": true,
+            "return_sum": -2.5635013276211738,
+            "posture_rms": 0.005735909442322101,
+            "normalized_torque_change_sum": 1.800815226362905,
+            "normalized_torque_rate_rms": 4.744490523705863,
+            "reward_parts": {
+              "progress": 0.45516483778504696,
+              "time": -7.999999999999185,
+              "posture": -0.0006580131426104447,
+              "torque_rate": -0.01800815226362907,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 14.07800000000137,
+            "final_distance": 0.014857109280299928,
+            "final_speed": 0.0006966213697481943,
+            "settled": true,
+            "return_sum": -2.5389707649595676,
+            "posture_rms": 0.005698510719669633,
+            "normalized_torque_change_sum": 1.7723968364834546,
+            "normalized_torque_rate_rms": 4.7069056136746035,
+            "reward_parts": {
+              "progress": 0.4794026638937158,
+              "time": -7.999999999999185,
+              "posture": -0.0006494604884438418,
+              "torque_rate": -0.017723968364834423,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.515999999999508,
+            "final_distance": 0.0210689522065732,
+            "final_speed": 0.0025805229074612143,
+            "settled": true,
+            "return_sum": -2.52186841367755,
+            "posture_rms": 0.005247009282504226,
+            "normalized_torque_change_sum": 1.769636784963193,
+            "normalized_torque_rate_rms": 4.703239289259992,
+            "reward_parts": {
+              "progress": 0.4963785763003034,
+              "time": -7.999999999999185,
+              "posture": -0.0005506221282137506,
+              "torque_rate": -0.01769636784963198,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 18,
+      "training_steps": 147456,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": 0.05927807837724686,
+            "critic_loss": 0.05561550706624985
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0008832431631162763,
+            "actor_loss": 0.027664722874760628,
+            "critic_loss": 0.05118531361222267
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0007303209858946502,
+            "actor_loss": 0.0429319404065609,
+            "critic_loss": 0.034709930419921875
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0005652927793562412,
+            "actor_loss": -0.018333377316594124,
+            "critic_loss": 0.04552023485302925
+          }
+        ],
+        "final_kl": 0.0008028210140764713
+      },
+      "episodes": [
+        {
+          "duration": 26.62799999999612,
+          "failed": false,
+          "arrival_time": 26.62799999999612,
+          "final_distance": 0.02521805241275238,
+          "final_speed": 0.010379750242808395,
+          "settled": true,
+          "return_sum": 0.0638280759360681,
+          "posture_rms": 0.005852587513487777,
+          "normalized_torque_change_sum": 15.967977771746172,
+          "normalized_torque_rate_rms": 17.315725310181538,
+          "reward_parts": {
+            "progress": 0.5495638951744939,
+            "time": -5.325599999999479,
+            "posture": -0.0004560415209487155,
+            "torque_rate": -0.15967977771746242,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5398155299546783,
+        "mean_posture_rms": 0.005407618473915286,
+        "mean_torque_rate_rms": 4.692722130934414,
+        "mean_arrival_time": 16.862000000000485,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.530000000000854,
+            "final_distance": 0.0009534376099461371,
+            "final_speed": 0.001912795230143705,
+            "settled": true,
+            "return_sum": -2.5204538206980915,
+            "posture_rms": 0.005431164199863286,
+            "normalized_torque_change_sum": 1.7956994586891315,
+            "normalized_torque_rate_rms": 4.737746640926758,
+            "reward_parts": {
+              "progress": 0.49809312478010476,
+              "time": -7.999999999999185,
+              "posture": -0.0005899508913175753,
+              "torque_rate": -0.017956994586891362,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.54400000000186,
+            "final_distance": 0.018835749222025123,
+            "final_speed": 0.0021071962772218986,
+            "settled": true,
+            "return_sum": -2.553031837396833,
+            "posture_rms": 0.004993234094765964,
+            "normalized_torque_change_sum": 1.4861691218278872,
+            "normalized_torque_rate_rms": 4.3101176344558505,
+            "reward_parts": {
+              "progress": 0.46232850155594823,
+              "time": -7.999999999999185,
+              "posture": -0.0004986477345027019,
+              "torque_rate": -0.014861691218278928,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.107999999998626,
+            "final_distance": 0.0222572256367528,
+            "final_speed": 0.000516789149365489,
+            "settled": true,
+            "return_sum": -2.5631832566888026,
+            "posture_rms": 0.005725122851409651,
+            "normalized_torque_change_sum": 1.801326478203493,
+            "normalized_torque_rate_rms": 4.745163956866196,
+            "reward_parts": {
+              "progress": 0.455485548726497,
+              "time": -7.999999999999185,
+              "posture": -0.0006555406332747074,
+              "torque_rate": -0.018013264782034955,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 14.028000000001354,
+            "final_distance": 0.014948986560205529,
+            "final_speed": 0.0008583245580064784,
+            "settled": true,
+            "return_sum": -2.5390595813351413,
+            "posture_rms": 0.0056926719192577245,
+            "normalized_torque_change_sum": 1.7630360397424325,
+            "normalized_torque_rate_rms": 4.694459553215747,
+            "reward_parts": {
+              "progress": 0.47921890933390365,
+              "time": -7.999999999999185,
+              "posture": -0.0006481302716061559,
+              "torque_rate": -0.01763036039742395,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.09999999999974,
+            "final_distance": 0.020758123964397992,
+            "final_speed": 0.0022412345005255255,
+            "settled": true,
+            "return_sum": -2.523349153654523,
+            "posture_rms": 0.005195899304279804,
+            "normalized_torque_change_sum": 1.9809439047561694,
+            "normalized_torque_rate_rms": 4.9761228692075195,
+            "reward_parts": {
+              "progress": 0.497000232784658,
+              "time": -7.999999999999185,
+              "posture": -0.0005399473916043465,
+              "torque_rate": -0.019809439047561772,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 19,
+      "training_steps": 155648,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 7.275957614183426e-12,
+            "actor_loss": -0.011834175325930119,
+            "critic_loss": 0.12280616164207458
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0011485901195555925,
+            "actor_loss": 0.042402233928442,
+            "critic_loss": 0.1092398464679718
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.0015590395778417587,
+            "actor_loss": -0.04684378206729889,
+            "critic_loss": 0.11219852417707443
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0013786136405542493,
+            "actor_loss": 0.017615990713238716,
+            "critic_loss": 0.07340255379676819
+          }
+        ],
+        "final_kl": 0.0011650084052234888
+      },
+      "episodes": [
+        {
+          "duration": 17.812000000001007,
+          "failed": false,
+          "arrival_time": 17.812000000001007,
+          "final_distance": 0.02193695994721824,
+          "final_speed": 0.010232169270747452,
+          "settled": true,
+          "return_sum": 1.8467903656924167,
+          "posture_rms": 0.008400814469996345,
+          "normalized_torque_change_sum": 11.19926101348141,
+          "normalized_torque_rate_rms": 17.730596322900833,
+          "reward_parts": {
+            "progress": 0.5218115050548036,
+            "time": -3.562399999999673,
+            "posture": -0.000628529227560361,
+            "torque_rate": -0.111992610134815,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        },
+        {
+          "duration": 13.008000000001013,
+          "failed": false,
+          "arrival_time": 13.008000000001013,
+          "final_distance": 0.006621659225995767,
+          "final_speed": 0.02503670765177565,
+          "settled": true,
+          "return_sum": 2.8970547165845786,
+          "posture_rms": 0.008823353282079555,
+          "normalized_torque_change_sum": 8.759561839676369,
+          "normalized_torque_rate_rms": 18.349360348600324,
+          "reward_parts": {
+            "progress": 0.5867566815480079,
+            "time": -2.6015999999997788,
+            "posture": -0.0005063465666650973,
+            "torque_rate": -0.08759561839676389,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.5398162109096702,
+        "mean_posture_rms": 0.005412779196718356,
+        "mean_torque_rate_rms": 4.649963108485005,
+        "mean_arrival_time": 16.928800000000443,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.540000000000857,
+            "final_distance": 0.0009227289378729057,
+            "final_speed": 0.0019256262610396306,
+            "settled": true,
+            "return_sum": -2.5205589273851,
+            "posture_rms": 0.005440142227643494,
+            "normalized_torque_change_sum": 1.8121566560211309,
+            "normalized_torque_rate_rms": 4.759407337081183,
+            "reward_parts": {
+              "progress": 0.4981545421242542,
+              "time": -7.999999999999185,
+              "posture": -0.0005919029491398414,
+              "torque_rate": -0.01812156656021115,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.642000000001893,
+            "final_distance": 0.0189935841349523,
+            "final_speed": 0.002220541798207507,
+            "settled": true,
+            "return_sum": -2.5533633593550302,
+            "posture_rms": 0.00496777552640938,
+            "normalized_torque_change_sum": 1.4882615211524397,
+            "normalized_torque_rate_rms": 4.313150706201234,
+            "reward_parts": {
+              "progress": 0.4620128317300944,
+              "time": -7.999999999999185,
+              "posture": -0.0004935758736158759,
+              "torque_rate": -0.01488261521152449,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.175999999998588,
+            "final_distance": 0.02242410527279649,
+            "final_speed": 0.0006326775891670525,
+            "settled": true,
+            "return_sum": -2.563536235596783,
+            "posture_rms": 0.005708595016544597,
+            "normalized_torque_change_sum": 1.8036263909917418,
+            "normalized_torque_rate_rms": 4.748192275739836,
+            "reward_parts": {
+              "progress": 0.4551517894544053,
+              "time": -7.999999999999185,
+              "posture": -0.0006517611412584037,
+              "torque_rate": -0.018036263909917603,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 13.886000000001307,
+            "final_distance": 0.015216736936686974,
+            "final_speed": 0.0012428840006045573,
+            "settled": true,
+            "return_sum": -2.5396358347149808,
+            "posture_rms": 0.005684649332901576,
+            "normalized_torque_change_sum": 1.7672938535148328,
+            "normalized_torque_rate_rms": 4.700124803548708,
+            "reward_parts": {
+              "progress": 0.47868340858094055,
+              "time": -7.999999999999185,
+              "posture": -0.0006463047607612139,
+              "torque_rate": -0.017672938535148338,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.399999999999572,
+            "final_distance": 0.021029474428208943,
+            "final_speed": 0.0024869341406955777,
+            "settled": true,
+            "return_sum": -2.5219866974964567,
+            "posture_rms": 0.005262733880092733,
+            "normalized_torque_change_sum": 1.7890301995624758,
+            "normalized_torque_rate_rms": 4.728940419854061,
+            "reward_parts": {
+              "progress": 0.4964575318570306,
+              "time": -7.999999999999185,
+              "posture": -0.0005539273578535588,
+              "torque_rate": -0.017890301995624868,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    },
+    {
+      "iteration": 20,
+      "training_steps": 163840,
+      "ppo": {
+        "epochs": [
+          {
+            "epoch": 0,
+            "kl_before": 0.0,
+            "actor_loss": -0.07695937156677246,
+            "critic_loss": 0.11717301607131958
+          },
+          {
+            "epoch": 1,
+            "kl_before": 0.0011335266754031181,
+            "actor_loss": 0.08865790069103241,
+            "critic_loss": 0.05688730627298355
+          },
+          {
+            "epoch": 2,
+            "kl_before": 0.001439056359231472,
+            "actor_loss": -0.011159573681652546,
+            "critic_loss": 0.06506918370723724
+          },
+          {
+            "epoch": 3,
+            "kl_before": 0.0011866677086800337,
+            "actor_loss": 0.05207904800772667,
+            "critic_loss": 0.06141357123851776
+          }
+        ],
+        "final_kl": 0.0006595990271307528
+      },
+      "episodes": [
+        {
+          "duration": 16.646000000001653,
+          "failed": false,
+          "arrival_time": 16.646000000001653,
+          "final_distance": 0.027307990851771765,
+          "final_speed": 0.0005400568949002137,
+          "settled": true,
+          "return_sum": 2.1113190652828058,
+          "posture_rms": 0.0073346976633850165,
+          "normalized_torque_change_sum": 10.441719400903322,
+          "normalized_torque_rate_rms": 17.709898256128138,
+          "reward_parts": {
+            "progress": 0.5453840182964573,
+            "time": -3.3291999999996986,
+            "posture": -0.00044775900461585424,
+            "torque_rate": -0.1044171940090335,
+            "success": 5.0,
+            "fall": 0.0
+          }
+        }
+      ],
+      "evaluation": {
+        "successes": 5,
+        "cases": 5,
+        "mean_reward": -2.539814454742257,
+        "mean_posture_rms": 0.005341204178138858,
+        "mean_torque_rate_rms": 4.66860153509582,
+        "mean_arrival_time": 16.933600000000464,
+        "results": [
+          {
+            "target": [
+              0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 12.544000000000858,
+            "final_distance": 0.0008901821711254534,
+            "final_speed": 0.0019498415314811964,
+            "settled": true,
+            "return_sum": -2.5203081095589277,
+            "posture_rms": 0.005440640315794859,
+            "normalized_torque_change_sum": 1.7935733875748203,
+            "normalized_torque_rate_rms": 4.73494111311676,
+            "reward_parts": {
+              "progress": 0.49821963565775,
+              "time": -7.999999999999185,
+              "posture": -0.0005920113409170908,
+              "torque_rate": -0.017935733875747963,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.0,
+              0.25
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 15.618000000001885,
+            "final_distance": 0.018982548586859986,
+            "final_speed": 0.002188825976192448,
+            "settled": true,
+            "return_sum": -2.553311973907427,
+            "posture_rms": 0.0049603155746504295,
+            "normalized_torque_change_sum": 1.4854782121709669,
+            "normalized_torque_rate_rms": 4.309115646177945,
+            "reward_parts": {
+              "progress": 0.4620349028262812,
+              "time": -7.999999999999185,
+              "posture": -0.0004920946120024283,
+              "torque_rate": -0.014854782121709834,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              -0.25,
+              0.0
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 22.237999999998554,
+            "final_distance": 0.022533689183928573,
+            "final_speed": 0.0007780741108080974,
+            "settled": true,
+            "return_sum": -2.562869396120177,
+            "posture_rms": 0.005443327337998748,
+            "normalized_torque_change_sum": 1.720942150215833,
+            "normalized_torque_rate_rms": 4.638079007271936,
+            "reward_parts": {
+              "progress": 0.4549326216321408,
+              "time": -7.999999999999185,
+              "posture": -0.0005925962501721341,
+              "torque_rate": -0.017209421502158723,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.18,
+              -0.18
+            ],
+            "initial_yaw": 0.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 14.038000000001357,
+            "final_distance": 0.014943845169961103,
+            "final_speed": 0.0009111220595436722,
+            "settled": true,
+            "return_sum": -2.5389841401309643,
+            "posture_rms": 0.005677942495981042,
+            "normalized_torque_change_sum": 1.7568551625610158,
+            "normalized_torque_rate_rms": 4.686223376239255,
+            "reward_parts": {
+              "progress": 0.4792291921143927,
+              "time": -7.999999999999185,
+              "posture": -0.0006447806197533956,
+              "torque_rate": -0.01756855162561009,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          },
+          {
+            "target": [
+              0.23,
+              0.14
+            ],
+            "initial_yaw": 1.0,
+            "duration": 40.00000000000292,
+            "failed": false,
+            "arrival_time": 20.229999999999666,
+            "final_distance": 0.020889998820915065,
+            "final_speed": 0.0022905851522560727,
+            "settled": true,
+            "return_sum": -2.5235986539937896,
+            "posture_rms": 0.005183795166269213,
+            "normalized_torque_change_sum": 1.979770241890344,
+            "normalized_torque_rate_rms": 4.974648532673205,
+            "reward_parts": {
+              "progress": 0.49673648307161444,
+              "time": -7.999999999999185,
+              "posture": -0.0005374346465167605,
+              "torque_rate": -0.019797702418903326,
+              "success": 5.0,
+              "fall": 0.0
+            }
+          }
+        ]
+      },
+      "passed_success_gate": true
+    }
+  ],
+  "lqr_baseline": {
+    "successes": 5,
+    "cases": 5,
+    "mean_reward": -2.553285745035491,
+    "mean_posture_rms": 0.005731869057012845,
+    "mean_torque_rate_rms": 5.981406199822523,
+    "mean_arrival_time": 16.742400000000394,
+    "results": [
+      {
+        "target": [
+          0.25,
+          0.0
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 12.448000000000826,
+        "final_distance": 0.000414519669612934,
+        "final_speed": 0.002138396306266459,
+        "settled": true,
+        "return_sum": -2.5203070356835284,
+        "posture_rms": 0.005744687833565622,
+        "normalized_torque_change_sum": 1.881796757818151,
+        "normalized_torque_rate_rms": 4.8499958219286325,
+        "reward_parts": {
+          "progress": 0.4991709606607766,
+          "time": -7.999999999999185,
+          "posture": -0.0006600287661023859,
+          "torque_rate": -0.018817967578181362,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.0,
+          0.25
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 17.70000000000107,
+        "final_distance": 0.018793984963573596,
+        "final_speed": 0.00181320084885602,
+        "settled": true,
+        "return_sum": -2.5591457057645925,
+        "posture_rms": 0.005109141395763467,
+        "normalized_torque_change_sum": 2.1035669321395996,
+        "normalized_torque_rate_rms": 5.127824748540349,
+        "reward_parts": {
+          "progress": 0.46241203007285403,
+          "time": -7.999999999999185,
+          "posture": -0.0005220665160381155,
+          "torque_rate": -0.021035669321396125,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          -0.25,
+          0.0
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 22.287999999998526,
+        "final_distance": 0.02248809889037065,
+        "final_speed": 0.0008475048290526705,
+        "settled": true,
+        "return_sum": -2.600062143562529,
+        "posture_rms": 0.004823740311710639,
+        "normalized_torque_change_sum": 5.462057636989377,
+        "normalized_torque_rate_rms": 8.26291234749362,
+        "reward_parts": {
+          "progress": 0.4550238022192582,
+          "time": -7.999999999999185,
+          "posture": -0.00046536941189647904,
+          "torque_rate": -0.05462057636989442,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.18,
+          -0.18
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 12.782000000000938,
+        "final_distance": 0.018809165646691103,
+        "final_speed": 0.0013232555286810243,
+        "settled": true,
+        "return_sum": -2.5563789288814798,
+        "posture_rms": 0.006377258652006322,
+        "normalized_torque_change_sum": 2.706409148412807,
+        "normalized_torque_rate_rms": 5.816366078158902,
+        "reward_parts": {
+          "progress": 0.47149855116093486,
+          "time": -7.999999999999185,
+          "posture": -0.0008133885582918493,
+          "torque_rate": -0.02706409148412808,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.23,
+          0.14
+        ],
+        "initial_yaw": 1.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 18.49400000000063,
+        "final_distance": 0.020400817763351387,
+        "final_speed": 0.0007428892389561784,
+        "settled": true,
+        "return_sum": -2.5305349112853235,
+        "posture_rms": 0.006604517092018171,
+        "normalized_torque_change_sum": 2.7377363551697855,
+        "normalized_torque_rate_rms": 5.84993200299111,
+        "reward_parts": {
+          "progress": 0.49771484518674897,
+          "time": -7.999999999999185,
+          "posture": -0.0008723929203752668,
+          "torque_rate": -0.027377363551697998,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      }
+    ]
+  },
+  "imitation_baseline": {
+    "successes": 5,
+    "cases": 5,
+    "mean_reward": -2.5409161636667355,
+    "mean_posture_rms": 0.00523095962152153,
+    "mean_torque_rate_rms": 4.673224056465958,
+    "mean_arrival_time": 17.236800000000223,
+    "results": [
+      {
+        "target": [
+          0.25,
+          0.0
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 12.530000000000854,
+        "final_distance": 0.0008565572612541444,
+        "final_speed": 0.001966653104169133,
+        "settled": true,
+        "return_sum": -2.519991879637813,
+        "posture_rms": 0.005340107577264439,
+        "normalized_torque_change_sum": 1.7708430136558122,
+        "normalized_torque_rate_rms": 4.70484193897054,
+        "reward_parts": {
+          "progress": 0.498286885477487,
+          "time": -7.999999999999185,
+          "posture": -0.000570334978735183,
+          "torque_rate": -0.017708430136558314,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.0,
+          0.25
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 17.66000000000109,
+        "final_distance": 0.01862761329336517,
+        "final_speed": 0.0019080239242319295,
+        "settled": true,
+        "return_sum": -2.5525750347999754,
+        "posture_rms": 0.004921419126318168,
+        "normalized_torque_change_sum": 1.483540088889995,
+        "normalized_torque_rate_rms": 4.3063036482723245,
+        "reward_parts": {
+          "progress": 0.4627447734132646,
+          "time": -7.999999999999185,
+          "posture": -0.0004844073243378411,
+          "torque_rate": -0.01483540088890011,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          -0.25,
+          0.0
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 22.077999999998642,
+        "final_distance": 0.022042237971473477,
+        "final_speed": 0.00030939359643080485,
+        "settled": true,
+        "return_sum": -2.5618757121892424,
+        "posture_rms": 0.005398913859777885,
+        "normalized_torque_change_sum": 1.7208270828981864,
+        "normalized_torque_rate_rms": 4.6379239467918945,
+        "reward_parts": {
+          "progress": 0.45591552405705327,
+          "time": -7.999999999999185,
+          "posture": -0.0005829654173060775,
+          "torque_rate": -0.017208270828981905,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.18,
+          -0.18
+        ],
+        "initial_yaw": 0.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 13.258000000001097,
+        "final_distance": 0.017784667809148516,
+        "final_speed": 0.0021659300904515624,
+        "settled": true,
+        "return_sum": -2.54460080341097,
+        "posture_rms": 0.005500039700057383,
+        "normalized_torque_change_sum": 1.7543341512952477,
+        "normalized_torque_rate_rms": 4.682859905142259,
+        "reward_parts": {
+          "progress": 0.47354754683601474,
+          "time": -7.999999999999185,
+          "posture": -0.0006050087340441902,
+          "torque_rate": -0.017543341512952285,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.23,
+          0.14
+        ],
+        "initial_yaw": 1.0,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 20.65799999999943,
+        "final_distance": 0.021640271419166943,
+        "final_speed": 0.002598911758718821,
+        "settled": true,
+        "return_sum": -2.5255373882956764,
+        "posture_rms": 0.004994317844189775,
+        "normalized_torque_change_sum": 2.027446195622804,
+        "normalized_torque_rate_rms": 5.034190843152774,
+        "reward_parts": {
+          "progress": 0.4952359378751153,
+          "time": -7.999999999999185,
+          "posture": -0.0004988642145758845,
+          "torque_rate": -0.02027446195622804,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      }
+    ]
+  },
+  "critic_warmup": {
+    "samples": 36842,
+    "before_mse": 4.736659526824951,
+    "after_mse": 0.32766538858413696,
+    "episodes": [
+      {
+        "duration": 12.968000000001,
+        "failed": false,
+        "arrival_time": 12.968000000001,
+        "final_distance": 0.004424335548442935,
+        "final_speed": 0.025520281968470882,
+        "settled": true,
+        "return_sum": 2.911117866299915,
+        "posture_rms": 0.009092926830473014,
+        "normalized_torque_change_sum": 8.589735693505526,
+        "normalized_torque_rate_rms": 18.198617692014277,
+        "reward_parts": {
+          "progress": 0.5911513289031151,
+          "time": -2.5935999999997796,
+          "posture": -0.0005361056681447161,
+          "torque_rate": -0.08589735693505564,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "duration": 18.320000000000725,
+        "failed": false,
+        "arrival_time": 18.320000000000725,
+        "final_distance": 0.020483480575696465,
+        "final_speed": 0.012369648788622152,
+        "settled": true,
+        "return_sum": 1.7815851589382485,
+        "posture_rms": 0.007100710534623583,
+        "normalized_torque_change_sum": 11.298603188507606,
+        "normalized_torque_rate_rms": 17.560409760387316,
+        "reward_parts": {
+          "progress": 0.5590330388486077,
+          "time": -3.6639999999996617,
+          "posture": -0.0004618480252840895,
+          "torque_rate": -0.11298603188507604,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "duration": 26.551999999996163,
+        "failed": false,
+        "arrival_time": 26.551999999996163,
+        "final_distance": 0.024438003580658105,
+        "final_speed": 0.009677514983115825,
+        "settled": true,
+        "return_sum": 0.0824782443168175,
+        "posture_rms": 0.006086892484928314,
+        "normalized_torque_change_sum": 15.775386926845211,
+        "normalized_torque_rate_rms": 17.23559944410523,
+        "reward_parts": {
+          "progress": 0.5511239928386837,
+          "time": -5.310399999999481,
+          "posture": -0.0004918792533938962,
+          "torque_rate": -0.15775386926845186,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "duration": 15.84400000000196,
+        "failed": false,
+        "arrival_time": 15.84400000000196,
+        "final_distance": 0.02673638017977092,
+        "final_speed": 0.0033943674665625574,
+        "settled": true,
+        "return_sum": 2.240263933052587,
+        "posture_rms": 0.008897711173471077,
+        "normalized_torque_change_sum": 10.252155262669172,
+        "normalized_torque_rate_rms": 17.987059556677192,
+        "reward_parts": {
+          "progress": 0.5122126645896959,
+          "time": -3.1687999999997163,
+          "posture": -0.0006271789104103061,
+          "torque_rate": -0.10252155262669183,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      }
+    ]
+  },
+  "selected_iteration": 13,
+  "holdout_reference": {
+    "successes": 3,
+    "cases": 3,
+    "mean_reward": -2.2343258948279567,
+    "mean_posture_rms": 0.005338784699097358,
+    "mean_torque_rate_rms": 4.572282935551331,
+    "mean_arrival_time": 18.793333333333,
+    "results": [
+      {
+        "target": [
+          -0.3310953371672254,
+          0.08359958753452192
+        ],
+        "initial_yaw": 3.00303934229726,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 13.304000000001112,
+        "final_distance": 0.01076753753236261,
+        "final_speed": 6.180802341205604e-05,
+        "settled": true,
+        "return_sum": -2.3560626943481378,
+        "posture_rms": 0.005333929933796438,
+        "normalized_torque_change_sum": 1.6931555226620245,
+        "normalized_torque_rate_rms": 4.600483021735168,
+        "reward_parts": {
+          "progress": 0.6614378770492597,
+          "time": -7.999999999999185,
+          "posture": -0.000569016170773035,
+          "torque_rate": -0.016931555226620026,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          -0.17782487679726747,
+          0.5075895967697843
+        ],
+        "initial_yaw": -0.03714260467785824,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 23.971999999997593,
+        "final_distance": 0.024061056059937483,
+        "final_speed": 0.002478988509814055,
+        "settled": true,
+        "return_sum": -1.9880796430278345,
+        "posture_rms": 0.005313593124860911,
+        "normalized_torque_change_sum": 1.5067304694353378,
+        "normalized_torque_rate_rms": 4.339830741853907,
+        "reward_parts": {
+          "progress": 1.0275523471044348,
+          "time": -7.999999999999185,
+          "posture": -0.000564685437931424,
+          "torque_rate": -0.015067304694353422,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.3319516791010715,
+          0.09400023297468756
+        ],
+        "initial_yaw": -3.0785905526499002,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 19.10400000000029,
+        "final_distance": 0.015007606640411088,
+        "final_speed": 0.0013746913275701044,
+        "settled": true,
+        "return_sum": -2.358835347107898,
+        "posture_rms": 0.005368831038634726,
+        "normalized_torque_change_sum": 1.825222961410322,
+        "normalized_torque_rate_rms": 4.776535043064919,
+        "reward_parts": {
+          "progress": 0.6599933694406276,
+          "time": -7.999999999999185,
+          "posture": -0.0005764869344281946,
+          "torque_rate": -0.018252229614103183,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      }
+    ]
+  },
+  "holdout_selected": {
+    "successes": 3,
+    "cases": 3,
+    "mean_reward": -2.2397413851071892,
+    "mean_posture_rms": 0.005595080268296971,
+    "mean_torque_rate_rms": 4.64421850468722,
+    "mean_arrival_time": 22.290666666664407,
+    "results": [
+      {
+        "target": [
+          -0.3310953371672254,
+          0.08359958753452192
+        ],
+        "initial_yaw": 3.00303934229726,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 13.348000000001127,
+        "final_distance": 0.010596234084097253,
+        "final_speed": 0.0002806730911159405,
+        "settled": true,
+        "return_sum": -2.355574711257485,
+        "posture_rms": 0.005458903714744095,
+        "normalized_torque_change_sum": 1.675920260793498,
+        "normalized_torque_rate_rms": 4.57700811228441,
+        "reward_parts": {
+          "progress": 0.6617804839457891,
+          "time": -7.999999999999185,
+          "posture": -0.0005959925953369812,
+          "torque_rate": -0.01675920260793527,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          -0.17782487679726747,
+          0.5075895967697843
+        ],
+        "initial_yaw": -0.03714260467785824,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 24.28599999999742,
+        "final_distance": 0.02478118094569696,
+        "final_speed": 0.0013681211766414032,
+        "settled": true,
+        "return_sum": -1.9911585911648562,
+        "posture_rms": 0.005769747728804372,
+        "normalized_torque_change_sum": 1.660488872069212,
+        "normalized_torque_rate_rms": 4.555887498705786,
+        "reward_parts": {
+          "progress": 1.02611209733291,
+          "time": -7.999999999999185,
+          "posture": -0.0006657997770809128,
+          "torque_rate": -0.016604888720692445,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      },
+      {
+        "target": [
+          0.3319516791010715,
+          0.09400023297468756
+        ],
+        "initial_yaw": -3.0785905526499002,
+        "duration": 40.00000000000292,
+        "failed": false,
+        "arrival_time": 29.237999999994674,
+        "final_distance": 0.02172588290617968,
+        "final_speed": 0.0010106371339995643,
+        "settled": true,
+        "return_sum": -2.372490852899226,
+        "posture_rms": 0.005556589361342445,
+        "normalized_torque_change_sum": 1.8430156101707245,
+        "normalized_torque_rate_rms": 4.799759903071464,
+        "reward_parts": {
+          "progress": 0.6465568169090868,
+          "time": -7.999999999999185,
+          "posture": -0.000617513706611726,
+          "torque_rate": -0.01843015610170709,
+          "success": 5.0,
+          "fall": 0.0
+        }
+      }
+    ]
+  },
+  "deployable_improvement": false,
+  "exported_iteration": 0
+}
