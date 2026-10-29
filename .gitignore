@@ -13,3 +13,15 @@
 !robot_vmc_test/**
 
 !.gitignore
+# 强化学习教学源码、实验记录和选定的验证结果
+!RL/
+!RL/*.py
+!RL/*.md
+!RL/results/
+!RL/results/*.json
+!RL/results/*.pt
+
+# 运行时缓存（已经跟踪的旧缓存不在本次提交中处理）
+**/__pycache__/
+*.pyc
+*.mjb
