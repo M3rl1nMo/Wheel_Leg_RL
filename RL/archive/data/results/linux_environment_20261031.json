@@ -1,0 +1,51 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "mujoco": "3.15.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pygame": "2.6.1",
+    "matplotlib": "3.11.2",
+    "rsl-rl-lib": "5.5.2",
+    "tensorboard": "2.21.0"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5080",
+    "capability": [
+      12,
+      0
+    ],
+    "runtime": "12.8",
+    "network_forward_backward": "passed"
+  },
+  "mujoco": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 6,
+    "timestep": 0.002,
+    "simulation": "passed",
+    "egl_render": "passed"
+  },
+  "baseline": {
+    "sha256": "0fce20d45c858af648f397df5d96955dac9ff86dbb2fc568264b01ef44f749e4",
+    "load_and_inference": "passed"
+  },
+  "rsl_rl_ppo_import": "passed",
+  "date": "2026-10-31",
+  "project": "/home/melin/Projects/Wheel_Leg",
+  "driver": "595.99.02",
+  "driver_cuda_display": "13.2",
+  "regression_tests": {
+    "run": 16,
+    "passed": 16
+  },
+  "pip_check": "passed with PYTHONPATH unset",
+  "glfw_desktop_context": "passed (hidden window)",
+  "short_policy_evaluation": {
+    "seconds": 2,
+    "standing": true,
+    "settled": false
+  },
+  "rsl_rl_robot_integration": false
+}

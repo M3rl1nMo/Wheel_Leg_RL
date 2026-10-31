@@ -4,7 +4,9 @@
 
 在原有 LQR + VMC 控制器基础上，本仓库新增了 **PyTorch 策略网络、强化学习教学实验、LQR 模仿学习及网络轨迹数据聚合训练**。原控制器仍可单独运行；学习控制代码位于 `RL/`。
 
-**当前成果：** 从短时站立扩展到 **24 维策略的平面目标控制**。手写位置外环生成前进/转向指令，单隐藏层 SiLU 网络输出六路电机力矩。在无障碍平面上，5 组固定测试和另外 8 组随机目标/初始朝向测试均完成 40 秒运行并满足停稳判据；随机测试最终位置误差为 **1.08～2.41 厘米**。尚未验证避障、远距离导航、强扰动和实机控制。详见 [训练日志](RL/TRAINING_LOG.md) 与 [平面控制说明](RL/PLANAR_NAVIGATION.md)。
+**当前成果：** 从短时站立扩展到 **24 维策略的平面目标控制**。手写位置外环生成前进/转向指令，单隐藏层 SiLU 网络输出六路电机力矩。在无障碍平面上，5 组固定测试和另外 8 组随机目标/初始朝向测试均完成 40 秒运行并满足停稳判据；随机测试最终位置误差为 **1.08～2.41 厘米**。尚未验证避障、远距离导航、强扰动和实机控制。详见 [训练日志](RL/docs/TRAINING_LOG.md) 与 [平面控制说明](RL/v2_outer/PLANAR_NAVIGATION.md)。
+
+2026-10-31 前三版已整理，第四版新增[坐标导航与速度控制](RL/v4_rsl_pd/README.md)，当前入口与 Linux 启动命令见 [RL 导航](RL/README.md)。第三版端到端控制尚未达到可靠到点停稳；上面的成功结果属于第二版。
 
 ## 目录结构
 
@@ -37,22 +39,16 @@ wheel_bipedal_robot/
 │   ├── quat_euler_trans.py         #   四元数 ↔ 欧拉角转换测试
 │   └── robot.xml                   #   MuJoCo 模型文件
 │
-├── RL/                             # [新增] 学习控制与训练实验
-│   ├── networks.py                 #   策略网络和价值网络
-│   ├── observations.py             #   20 维观测及固定尺度缩放
-│   ├── observe_robot.py            #   单步 Actor–Critic 教学实验
-│   ├── actor_critic_demo.py        #   手写数据的梯度更新演示
-│   ├── checkpoints.py             #   奖励训练存档保存与恢复
-│   ├── training_metrics.py        #   回合 CSV 记录和滑动平均
-│   ├── lqr_imitation.py           #   LQR 数据采集、模仿训练和策略评估
-│   ├── lqr_dagger.py              #   网络轨迹上的 LQR 标注与再训练
-│   ├── x_position_imitation.py    #   x 位置外环与 22 维策略实验
-│   ├── planar_control.py          #   平面位置/朝向外环与 LQR 教师
-│   ├── planar_navigation.py       #   24 维策略训练和目标点评估入口
-│   ├── PLANAR_NAVIGATION.md       #   平面控制运行说明和验证范围
-│   ├── TRAINING_LOG.md            #   实验过程、结果和局限
-│   ├── results/                   #   已提交的策略模型和验证报告
-│   └── experiments/               #   本地生成的数据和存档，不纳入 Git
+├── RL/                             # 学习控制，按版本整理
+│   ├── README.md                   # 各版本的说明和启动命令
+│   ├── v1_standing/                # 第一版：4 输入、6 输出，无位置外环
+│   ├── v2_outer/                   # 第二版：24 输入、6 输出，保留位置外环
+│   ├── v3_direct/                  # 第三版：27 输入、6 输出，端到端实验未成功
+│   ├── v4_rsl_pd/                  # 第四版：差速目标、PPO 平衡修正与坐标导航
+│   ├── common/                     # 多版本共用的网络、观测、存档、教师工具
+│   ├── archive/                    # 其他实验代码、数据和分析报告
+│   └── docs/                       # 完整训练日志与训练历程
+│                                  # 各版本的 data/ 保存模型、数据、运行日志
 │
 ├── cal_lqr_k.m                 #   MATLAB LQR 整定与多项式拟合，生成 POLY_COEFFICIENT
 └── README.md
@@ -113,7 +109,7 @@ python robot_control_main.py
 在项目根目录运行，让机器人移动到世界坐标 `(0.2, 0.2)` 米：
 
 ```powershell
-& '.\.venv\Scripts\python.exe' '.\RL\planar_navigation.py' --evaluate --checkpoint '.\RL\results\planar_policy.pt' --target-x 0.2 --target-y 0.2 --seconds 40 --viewer
+& '.\.venv\Scripts\python.exe' '.\RL\v2_outer\planar_navigation.py' --evaluate --checkpoint '.\RL\v2_outer\data\results\planar_policy.pt' --target-x 0.2 --target-y 0.2 --seconds 40 --viewer
 ```
 
 修改 `--target-x`、`--target-y` 设置目标，`--initial-yaw 1.0` 设置初始朝向（弧度）。去掉 `--viewer` 可无窗口评估。测试期间不更新参数或随机采样动作。
@@ -132,18 +128,18 @@ python robot_control_main.py
 
 该入口只在内存中禁用原场景斜坡，不修改原 XML；目前不包含避障。先在原点附近小范围内测试。初始化模型、最终策略和报告随仓库提供：
 
-- [平面控制使用说明](RL/PLANAR_NAVIGATION.md)
-- [最终 24 维策略](RL/results/planar_policy.pt)
-- [训练和固定测试报告](RL/results/planar_report.json)
-- [随机目标验证报告](RL/results/planar_holdout.json)
+- [平面控制使用说明](RL/v2_outer/PLANAR_NAVIGATION.md)
+- [最终 24 维策略](RL/v2_outer/data/results/planar_policy.pt)
+- [训练和固定测试报告](RL/v2_outer/data/results/planar_report.json)
+- [随机目标验证报告](RL/v2_outer/data/results/planar_holdout.json)
 
 从头复现本阶段（从随仓库提供的 x 控制策略初始化）：
 
 ```powershell
-& '.\.venv\Scripts\python.exe' '.\RL\planar_navigation.py' --train
+& '.\.venv\Scripts\python.exe' '.\RL\v2_outer\planar_navigation.py' --train
 ```
 
-会在 `RL/experiments/planar_时间戳/` 中保存新的数据、各轮模型及报告。此过程不使用奖励或价值网络，不自动修改 `observe_robot.py` 的奖励训练存档。
+会在 `RL/v2_outer/data/experiments/planar_时间戳/` 中保存新的数据、各轮模型及报告。此过程不使用奖励或价值网络，不自动修改 `observe_robot.py` 的奖励训练存档。
 
 ## 早期工作：站立策略与 LQR 模仿学习
 
@@ -152,7 +148,7 @@ python robot_control_main.py
 仓库包含本次验证模型，无须先训练。在**项目根目录**运行：
 
 ```powershell
-& '.\.venv\Scripts\python.exe' '.\RL\lqr_imitation.py' --evaluate --viewer --checkpoint '.\RL\results\lqr_dagger_policy.pt'
+& '.\.venv\Scripts\python.exe' '.\RL\common\lqr_imitation.py' --evaluate --viewer --checkpoint '.\RL\archive\data\results\lqr_dagger_policy.pt'
 ```
 
 - `--evaluate`：加载策略并评估，不更新参数。
@@ -199,23 +195,23 @@ python robot_control_main.py
 在项目根目录依次运行：
 
 ```powershell
-& '.\.venv\Scripts\python.exe' '.\RL\lqr_imitation.py'
-& '.\.venv\Scripts\python.exe' '.\RL\lqr_dagger.py'
+& '.\.venv\Scripts\python.exe' '.\RL\common\lqr_imitation.py'
+& '.\.venv\Scripts\python.exe' '.\RL\archive\code\lqr_dagger.py'
 ```
 
 第一次命令采集 LQR 数据并训练 120 遍。第二次命令从首次模仿模型开始，执行三轮采集和再训练，每轮训练 80 遍。训练完成后会保存模型、数据集和验证报告。
 
 - 初次模仿结果位于 `RL/experiments/lqr_imitation_silu/`。已有 `policy.pt` 时脚本会拒绝覆盖；再次从头训练前请先另存旧结果。
-- 数据聚合结果位于 `RL/experiments/lqr_dagger_时间戳/`，各轮模型分别保存为 `policy_round_1.pt` 至 `policy_round_3.pt`。
+- 数据聚合结果位于 `RL/archive/data/experiments/lqr_dagger_时间戳/`，各轮模型分别保存为 `policy_round_1.pt` 至 `policy_round_3.pt`。
 - 评估新模型时，将演示命令中的 `--checkpoint` 改为相应模型路径。
 - `observe_robot.py` 不会自动加载这些模仿模型；直接运行它会进入独立的奖励训练实验。
 
 本次结果文件：
 
-- [训练日志与结论](RL/TRAINING_LOG.md)
-- [最终策略模型](RL/results/lqr_dagger_policy.pt)
-- [三轮训练与固定姿态评估报告](RL/results/lqr_dagger_report.json)
-- [额外 10 个姿态的评估报告](RL/results/additional_evaluation.json)
+- [训练日志与结论](RL/docs/TRAINING_LOG.md)
+- [最终策略模型](RL/archive/data/results/lqr_dagger_policy.pt)
+- [三轮训练与固定姿态评估报告](RL/archive/data/results/lqr_dagger_report.json)
+- [额外 10 个姿态的评估报告](RL/archive/data/results/additional_evaluation.json)
 
 虚拟环境、完整训练数据及历史实验存档保留在本地，不随 Git 提交。报告中的历史机器路径仅用于记录来源，运行随仓库提供的模型不依赖这些路径。
 

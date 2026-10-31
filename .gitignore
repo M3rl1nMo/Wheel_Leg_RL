@@ -15,13 +15,20 @@
 !.gitignore
 # 强化学习教学源码、实验记录和选定的验证结果
 !RL/
-!RL/*.py
-!RL/*.md
-!RL/results/
-!RL/results/*.json
-!RL/results/*.pt
+!RL/**/
+!RL/**/*.py
+!RL/**/*.md
+!RL/reorganization_manifest.json
+!RL/**/data/results/*.json
+!RL/**/data/results/*.pt
 
 # 运行时缓存（已经跟踪的旧缓存不在本次提交中处理）
 **/__pycache__/
 *.pyc
 *.mjb
+
+# Linux environment setup and reproducible dependencies
+!LINUX_SETUP.md
+!requirements-linux.txt
+!requirements-linux-lock.txt
+.venv-linux/
