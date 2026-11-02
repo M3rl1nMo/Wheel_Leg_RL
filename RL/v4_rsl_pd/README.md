@@ -26,3 +26,14 @@ python -m RL.v4_rsl_pd.train --iterations 5000
 ```
 
 训练默认写入独立的 `data/experiments/` 子目录。早期站立、直接轮速实验和历次运行的原始数据见[历史归档](archive/README.md)。
+
+## 5,000 轮基线后的续训结果
+
+[约 7,500 轮权重](data/results/model_7500.pt)搭配原补偿，在 8 个固定目标上平均用时 6.37 s、误差 0.35 cm。[10,000 轮权重](data/results/model_9999.pt)关闭补偿后为 6.73 s、1.10 cm，两种配置均 8/8 停稳。[逐项补偿对照](data/results/fixed-weight-navigation.json) · [训练分析和外部项目对照](../docs/TRAINING_LOG.md#2026-11-02第四版续训与固定权重补偿对照)
+
+从项目根目录运行：
+
+```bash
+python -m RL.v4_rsl_pd.navigate 0.18 -0.18 --checkpoint RL/v4_rsl_pd/data/results/model_7500.pt --forward-bias -0.012
+python -m RL.v4_rsl_pd.navigate 0.18 -0.18 --checkpoint RL/v4_rsl_pd/data/results/model_9999.pt --forward-bias 0
+```

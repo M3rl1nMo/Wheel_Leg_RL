@@ -14,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--iterations", type=int, default=5000)
     parser.add_argument("--log-dir", type=Path)
+    parser.add_argument("--resume", type=Path, help="恢复网络与优化器；--iterations 为本次追加轮数")
     args = parser.parse_args()
     if args.iterations < 1:
         parser.error("--iterations 必须大于零")
@@ -24,11 +25,17 @@ def main():
     torch.set_num_threads(1)
     env = ParallelStandingEnv(8, movement="residual")
     try:
+        env_device = "cuda" if torch.cuda.is_available() else "cpu"
         runner = OnPolicyRunner(env, movement_train_cfg(), log_dir=str(folder),
-                                device="cuda" if torch.cuda.is_available() else "cpu")
-        with torch.no_grad():
-            runner.alg.actor.mlp[-1].weight.zero_()
-            runner.alg.actor.mlp[-1].bias.zero_()
+                                device=env_device)
+        if args.resume:
+            runner.load(str(args.resume), map_location=env_device)
+            runner.current_learning_iteration += 1
+            print(f"恢复 {args.resume}，已完成 {runner.current_learning_iteration} 轮，再训练 {args.iterations} 轮", flush=True)
+        else:
+            with torch.no_grad():
+                runner.alg.actor.mlp[-1].weight.zero_()
+                runner.alg.actor.mlp[-1].bias.zero_()
         runner.save(str(folder / "initial.pt"))
         runner.learn(args.iterations)
     finally:

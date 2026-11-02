@@ -18,7 +18,7 @@ from .movement import ResidualMovementEnv
 
 
 @torch.inference_mode()
-def navigate(env, actor, target, seconds=40., viewer=False):
+def navigate(env, actor, target, seconds=40., viewer=False, *, forward_bias=-.012):
     env.reset()
     steps = math.ceil(seconds / env.dt)
     env.max_episode_length = steps + 1  # 不触发训练时的十秒自动重置
@@ -54,7 +54,7 @@ def navigate(env, actor, target, seconds=40., viewer=False):
             if hold_yaw is None and abs(angle) > math.pi / 2:
                 angle = wrap_angle(angle - math.pi)
             forward = dx * math.cos(yaw) + dy * math.sin(yaw)
-            v = np.clip(.85 * forward * max(0., math.cos(angle)), -.15, .15) - .012
+            v = np.clip(.85 * forward * max(0., math.cos(angle)), -.15, .15) + forward_bias
             w = np.clip(1.6 * angle, -.55, .55)
             if k * env.dt < 1.:
                 v, w = 0., 0.
@@ -98,21 +98,23 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("x", type=float)
     parser.add_argument("y", type=float)
+    parser.add_argument("--checkpoint", default=CHECKPOINT, help="策略检查点路径")
+    parser.add_argument("--forward-bias", type=float, default=-.012, help="外环前向速度补偿（m/s）")
     parser.add_argument("--seconds", type=float, default=40.)
     parser.add_argument("--lqr", action="store_true", help="同一外环使用传统 LQR/VMC")
     parser.add_argument("--viewer", action="store_true")
     args = parser.parse_args()
-    if not np.isfinite([args.x, args.y, args.seconds]).all() or args.seconds <= 0:
+    if not np.isfinite([args.x, args.y, args.seconds, args.forward_bias]).all() or args.seconds <= 0:
         parser.error("坐标须有限，时长须为正")
     torch.set_num_threads(1)
     env = ResidualMovementEnv(sample_commands=False)
     actor = None
     if not args.lqr:
         runner = OnPolicyRunner(env, movement_train_cfg(), device="cpu")
-        runner.load(str(CHECKPOINT), map_location="cpu")
+        runner.load(str(args.checkpoint), map_location="cpu")
         actor = runner.get_inference_policy()
     print(json.dumps(navigate(env, actor,
-                              (args.x, args.y), args.seconds, args.viewer)))
+                              (args.x, args.y), args.seconds, args.viewer, forward_bias=args.forward_bias)))
 
 
 if __name__ == "__main__":
